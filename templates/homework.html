@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belles' Task Manager</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>Homework Tasks</h2>
     {% for homework in homework %}
         {{ homework.section_name }}<br>
         {{ homework.song_name }}<br>
         {{ homework.task_description }}<br>
         {{ homework.due_date }}<br>
 
-    {% endfor %}    
-</body>
-</html>
+    {% endfor %} 
+    
+{% endblock %}
