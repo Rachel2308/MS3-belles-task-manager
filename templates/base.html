@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" 
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <link rel="icon" type="image/png" href="static/image/belles-favicon.PNG" />
     {% block styles %}
     {% endblock %}
     <title>Belles' Task Manager</title>
 </head>
+
 <body>
-    <h1>The Belles of Three Spires Homework</h1>
+
+    <header>
+        <!-- top navbar-->
+        <nav class="nav-extended grey darken-2">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo pink-text text-accent-1 text-shadow">Belles' Homework Manager</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" class="pink-text text-accent-1 text-shadow">Home</a></li>
+                    <li><a href="#" class="pink-text text-accent-1 text-shadow">Add Task</a></li>
+                    <li><a href="#" class="pink-text text-accent-1 text-shadow">View Tasks</a></li>
+                    <li><a href="#" class="pink-text text-accent-1 text-shadow">Log Out</a></li>
+                  
+                </ul>
+            </div>
+        </nav>
+
+        <!-- mobile navbar -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align pink-text text-accent-2">Belles' Homework Manager</h4></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Add Task</a></li>
+            <li><a href="#">View Tasks</a></li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+
+    </header>
+
 
     {% block content %}
     {% endblock %}
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
 </body>
+
 </html>
