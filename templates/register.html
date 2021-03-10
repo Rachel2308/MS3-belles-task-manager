@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align registration-form-header">Register User</h3>
+<h3 class="center-align registration-form-header">Register New User</h3>
 
 <div class="row">
-    <form class="col s12 m8 offset-m2"method="POST" action="{{ url_for ('register') }}">
-        <div class="card-panel">
+    <form class="col s10 offset-s1 m6 offset-m3" method="POST" action="{{ url_for ('register') }}">
+        <div class="card-panel registration-form">
             <!-- Enter Name -->
             <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-plus prefix pink-text text-accent-1"></i>
-                    <input id="fullname" name="fullname" type="text" class="validate">
-                    <label for="fullname">Name (Use First Name and Initial)</label>
+                <div class="input-field col s8 offset-s2">
+                    <i class="fas fa-user prefix pink-text text-accent-1 text-shadow"></i>
+                    <input id="username" name="username" type="text" class="validate">
+                    <label for="username">Name (Use First Name and Initial)</label>
                 </div>
             </div>
 
             <!-- Enter Password -->
             <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-lock prefix pink-text text-accent-1"></i>
+                <div class="input-field col s8 offset-s2">
+                    <i class="fas fa-lock prefix pink-text text-accent-1 text-shadow"></i>
                     <input id="password" name="password" type="password" class="validate">
                     <label for="password">Password</label>
                 </div>
@@ -26,11 +26,20 @@
 
             <!--Register User Button-->
             <div class="row">
-                <button type="submit" class="col s4 offset-s4 btn-large pink accent-1 text-shadow">
+                <button type="submit" class="col s4 offset-s4 btn-large pink accent-1 text-shadow submit-button">
                     Register User</button>
             </div>
         </div>
     </form>
 </div>
+
+ <div class="row">
+      <div class="card-panel col s6 offset-s3 m4 offset-m4 lg2 offset-lg5 registration-bottom-link">
+        <p>If already registered, please <a href="#">Log In</a></p>
+        
+      </div>
+    </div>
+  
+
 
 {% endblock %}

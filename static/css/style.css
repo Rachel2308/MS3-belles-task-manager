@@ -1,5 +1,6 @@
 body {
     background-color: #f7edf7;
+    font-family: 'Lato', sans-serif;
 }
 
 .text-shadow {
@@ -10,6 +11,44 @@ body {
     font-family: "niconne", cursive;
 }
 
+.sidenav {
+    background-color: #f7edf7;
+}
+
+header a:hover {
+    color: #ff80ab;
+}
+
+/* Registration Form */
+
 .registration-form-header {
+    color: #616161;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.registration-form {
+    border-radius: 10px;
+    background-color: #fff8ff;
+}
+
+.submit-button {
+    border-radius: 10px;
+}
+
+.registration-bottom-link {
+    background-color: #fff8ff;
+    border-radius: 10px;
+    margin-top: 50px;
+    text-align: center;
     color: #424242;
+}
+
+.registration-bottom-link a{
+    color: #e62e6c;
+}
+
+.registration-bottom-link a:hover {
+	color: #4d4455;
+	text-decoration: underline;
 }
