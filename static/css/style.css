@@ -21,13 +21,15 @@ header a:hover {
     color: #ff80ab;
 }
 
-/* Registration Form */
-
-.registration-form-header {
+.page-title {
     color: #616161;
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+/* Registration and Log in Form */
+
+
 
 .registration-form {
     border-radius: 10px;
