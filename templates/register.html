@@ -10,8 +10,10 @@
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-user prefix pink-text text-accent-1 text-shadow"></i>
-                    <input id="username" name="username" type="text" class="validate">
-                    <label for="username">Name (Use First Name and Initial)</label>
+                    <input id="username" name="username" type="text" minlength="4" maxlength="15" 
+                        pattern="^[a-zA-Z]{5,15}$" class="validate" 
+                        placeholder="Enter Username. Use first name followed by your initial" required>
+                    
                 </div>
             </div>
 
@@ -19,8 +21,9 @@
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-lock prefix pink-text text-accent-1 text-shadow"></i>
-                    <input id="password" name="password" type="password" class="validate">
-                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15" 
+                        pattern="^[a-zA-Z0-9]{5,}$" class="validate" placeholder="Enter Password (minimum 8 characters)" required>
+                    
                 </div>
             </div>
 
@@ -35,7 +38,7 @@
 
  <div class="row">
       <div class="card-panel col s6 offset-s3 m4 offset-m4 lg2 offset-lg5 registration-bottom-link">
-        <p>If already registered, please <a href="#">Log In</a></p>
+        <p>Already registered? Please <a href="#">Log In</a></p>
         
       </div>
     </div>
