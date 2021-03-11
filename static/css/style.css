@@ -10,6 +10,7 @@ body {
 .brand-logo {
     font-family: "niconne", cursive;
     margin-left: 15px;
+    
 }
 
 .sidenav {
@@ -40,6 +41,7 @@ header a:hover {
 .submit-button:hover {
     color: #424242;
     transform: scale(1.1);
+    text-align: center;
 }
 
 .registration-bottom-link {
@@ -73,3 +75,31 @@ header a:hover {
 .flashes h4 {
     line-height: 2;
 }
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1393px) {
+	
+}
+
+@media screen and (max-width: 992px) {
+	
+}
+
+@media screen and (max-width: 768px) {
+    .brand-logo {
+        width: 80% !important;
+        text-align: center;
+    }
+}	
+
+@media screen and (max-width: 576px) {
+    .brand-logo {
+        
+        font-size: 25px !important;
+        
+    }
+    
+} 
+

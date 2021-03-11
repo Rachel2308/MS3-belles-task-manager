@@ -4,22 +4,22 @@
 <h3 class="center-align registration-form-header">Register New User</h3>
 
 <div class="row">
-    <form class="col s10 offset-s1 m6 offset-m3" method="POST" action="{{ url_for ('register') }}">
+    <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for ('register') }}">
         <div class="card-panel registration-form">
             <!-- Enter Name -->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
+                <div class="input-field col s10 offset-s1">
                     <i class="fas fa-user prefix pink-text text-accent-1 text-shadow"></i>
                     <input id="username" name="username" type="text" minlength="4" maxlength="15" 
-                        pattern="^[a-zA-Z]{5,15}$" class="validate" 
-                        placeholder="Enter Username. Use first name followed by your initial" required>
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" 
+                        placeholder="Enter Username" required>
                     
                 </div>
             </div>
 
             <!-- Enter Password -->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
+                <div class="input-field col s10 offset-s1">
                     <i class="fas fa-lock prefix pink-text text-accent-1 text-shadow"></i>
                     <input id="password" name="password" type="password" minlength="5" maxlength="15" 
                         pattern="^[a-zA-Z0-9]{5,}$" class="validate" placeholder="Enter Password (minimum 8 characters)" required>
@@ -29,8 +29,7 @@
 
             <!--Register User Button-->
             <div class="row">
-                <button type="submit" class="col s4 offset-s4 btn-large pink accent-1 text-shadow submit-button">
-                    Register User</button>
+                <button type="submit" class="col s4 offset-s4 btn-large pink accent-1 text-shadow submit-button">Register</button>
             </div>
         </div>
     </form>
