@@ -1,29 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align page-title">Leads Tasks</h3>
-    
-  {% for homework in homework %}
-        {{ homework.section_name }}<br>
-        {{ homework.song_name }}<br>
-        {{ homework.task_description }}<br>
-        {{ homework.due_date }}<br>
+<h3 class="center-align page-title">Leads' Tasks</h3>
+<div class="center-align">All tasks have been set by either Lucy or your section lead, click on the song title for more info. Please give us a shout if there's
+    anything you're unsure of!</div>
 
-    {% endfor %} 
 
-    <ul class="collapsible">
-    <li>
-      <div class="collapsible-header white-text pink accent-1"><i class="fas fa-caret-down"></i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header white-text pink accent-1"><i class="fas fa-caret-down"></i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header white-text pink accent-1"><i class="fas fa-caret-down"></i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-</ul>  
-    
+<div class="row">
+    {% for homework in homework %}
+    <div class="col s10 offset-s1 m6 l4">
+        <div class="card white-text pink accent-1">
+            <div class="card-title activator card-content center-align"><i class="fas fa-music"></i>
+                {{ homework.song_name }}<br>
+                Due Date: {{ homework.due_date }}
+            </div>
+            <div class="card-reveal">
+                <div class="card-title grey-text text-darken-4">{{ homework.song_name }}<i
+                        class="fas fa-times right"></i>
+                    <p class="task-title">{{ homework.task_title }}</p>
+                    <p class="task-description">{{ homework.task_description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
 {% endblock %}
