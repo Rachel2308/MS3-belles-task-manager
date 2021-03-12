@@ -28,16 +28,18 @@
         <!-- top navbar-->
         <nav class="nav-extended grey darken-2">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo pink-text text-accent-1 text-shadow">Belles' Homework Manager</a>
+                <a href="{{ url_for('show_tasks') }}" class="brand-logo pink-text text-accent-1 text-shadow">Belles' Homework Manager</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('calendar') }}" class="text-shadow"><i class="far fa-calendar-alt"></i>  View Calendar</a></li>
-                    <li><a href="#" class="text-shadow"><i class="fas fa-plus"></i>  Add Task</a></li>
-                    <li><a href="{{ url_for('show_tasks') }}" class="text-shadow"><i class="fas fa-list"></i>  View Tasks</a></li>
-                    <li><a href="{{ url_for('login') }}" class="text-shadow"><i class="fas fa-list"></i>  Log In</a></li>
-                    <li><a href="{{ url_for('register') }}" class="text-shadow"><i class="fas fa-list"></i>  Register</a></li>
-                    <li><a href="#" class="text-shadow"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
-                                      
+                    
+                    {% if session.user %}
+                        <li><a href="#" class="text-shadow"><i class="fas fa-plus"></i>  Add Task</a></li>
+                        <li><a href="{{ url_for('show_tasks') }}" class="text-shadow"><i class="fas fa-list"></i>  View Tasks</a></li>
+                        <li><a href="{{ url_for('logout') }}" class="text-shadow"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
+                    {% else %}
+                        
+                     
+                    {% endif %}                  
                 </ul>
             </div>
         </nav>
@@ -45,12 +47,14 @@
         <!-- mobile navbar -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align pink-text text-accent-2">Belles' Homework Manager</h4></li>
-            <li><a href="{{ url_for('calendar') }}"><i class="far fa-calendar-alt"></i>View Calendar</a></li>
-            <li><a href="#"><i class="fas fa-plus"></i>Add Task</a></li>
-            <li><a href="{{ url_for('show_tasks') }}"><i class="fas fa-list"></i>View Tasks</a></li>
             <li><a href="{{ url_for('login') }}"><i class="fas fa-list"></i>Log In</a></li>
-            <li><a href="{{ url_for('register') }}"><i class="fas fa-list"></i>  Register</a></li>
-            <li><a href="#"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+            {% if session.user %}                    
+                    <li><a href="#" class="text-shadow"><i class="fas fa-plus"></i>  Add Task</a></li>
+                    <li><a href="{{ url_for('show_tasks') }}" class="text-shadow"><i class="fas fa-list"></i>  View Tasks</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('register') }}" class="text-shadow"><i class="fas fa-list"></i>  Register</a></li>
+                    <li><a href="{{ url_for('logout') }}" class="text-shadow"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
+                {% endif %}
         </ul>
 
         
