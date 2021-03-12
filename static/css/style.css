@@ -78,11 +78,6 @@ header a:hover {
     text-align: center !important;
     color: white;
 }
-.section-link {
-    
-    
-    
-}
 
 .section-link:hover {
     transform: scale(1.1);
@@ -102,8 +97,8 @@ header a:hover {
 
 /* Section task pages */
 
-.card {
-    margin-top: 20px;
+.card-title {
+    margin-top: 30px;
     height: 300px;
     
 }
