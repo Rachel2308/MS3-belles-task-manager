@@ -28,13 +28,13 @@
         <!-- top navbar-->
         <nav class="nav-extended grey darken-2">
             <div class="nav-wrapper">
-                <a href="{{ url_for('show_tasks') }}" class="brand-logo pink-text text-accent-1 text-shadow">Belles' Homework Manager</a>
+                <a href="{{ url_for('homework') }}" class="brand-logo pink-text text-accent-1 text-shadow">Belles' Homework Manager</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     
                     {% if session.user %}
                         <li><a href="#" class="text-shadow"><i class="fas fa-plus"></i>  Add Task</a></li>
-                        <li><a href="{{ url_for('show_tasks') }}" class="text-shadow"><i class="fas fa-list"></i>  View Tasks</a></li>
+                        <li><a href="{{ url_for('homework') }}" class="text-shadow"><i class="fas fa-list"></i>  View Tasks</a></li>
                         <li><a href="{{ url_for('logout') }}" class="text-shadow"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
                     {% else %}
                         
@@ -50,7 +50,7 @@
             
             {% if session.user %}                    
                     <li><a href="#"><i class="fas fa-plus"></i>  Add Task</a></li>
-                    <li><a href="{{ url_for('show_tasks') }}"><i class="fas fa-list"></i>  View Tasks</a></li>
+                    <li><a href="{{ url_for('homework') }}"><i class="fas fa-list"></i>  View Tasks</a></li>
                     <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
                 {% else %}
                     <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>  Register</a></li>

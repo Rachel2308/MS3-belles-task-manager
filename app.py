@@ -18,11 +18,16 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+@app.route("/homework")
+def homework():
+    return render_template("homework.html")
+
+
 @app.route("/")
 @app.route("/show_tasks")
 def show_tasks():
     homework = mongo.db.homework.find()
-    return render_template("homework.html", homework=homework)
+    return render_template("leads.html", homework=homework)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -72,6 +77,8 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
 
 
 @app.route("/logout")
