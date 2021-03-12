@@ -42,8 +42,8 @@ def register():
         mongo.db.users.insert_one(register)
 
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful, Please Log In")
-        return render_template("login.html")
+        flash("Registration Successful")
+        return render_template("homework.html")
     return render_template("register.html")
 
 
