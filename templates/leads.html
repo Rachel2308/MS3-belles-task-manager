@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align page-title">Leads Tasks</h3>
+    
+    {% for homework in homework %}
+        {{ homework.section_name }}<br>
+        {{ homework.song_name }}<br>
+        {{ homework.task_description }}<br>
+        {{ homework.due_date }}<br>
+
+    {% endfor %} 
+    
+{% endblock %}

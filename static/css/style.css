@@ -1,5 +1,5 @@
 body {
-    background-color: #edeef0;
+    background-color: #fbf7f5;
     font-family: 'Lato', sans-serif;
 }
 
@@ -43,7 +43,7 @@ header a:hover {
 .submit-button:hover {
     color: #424242;
     transform: scale(1.1);
-    text-align: center;
+    
 }
 
 .registration-bottom-link {
@@ -60,7 +60,7 @@ header a:hover {
 
 .registration-bottom-link a:hover {
 	color: #4d4455;
-	text-decoration: underline;
+	
 }
 
 .input-field {
@@ -71,6 +71,27 @@ header a:hover {
     border-style:solid;
 }
 
+/* Homework Front Page */
+
+.section-link {
+    border-radius: 10px;
+    text-align: center !important;
+    color: white;
+}
+.section-link {
+    
+    
+    
+}
+
+.section-link:hover {
+    transform: scale(1.1);
+    
+}
+
+.section-link:hover {
+    color: #4d4455 !important;
+}
 
 /* Flashes */
 
