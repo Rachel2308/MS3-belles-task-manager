@@ -63,7 +63,7 @@ header a:hover {
 	
 }
 
-.input-field {
+.registration-form {
     border-color: #4d4455;
     background-color: white;
     border-radius: 20px;
@@ -97,10 +97,12 @@ header a:hover {
 
 /* Section task pages */
 
+.card {
+    margin-top: 30px;  
+}
+
 .card-title {
-    margin-top: 30px;
     height: 300px;
-    
 }
 
 .task-title {

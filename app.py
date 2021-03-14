@@ -24,10 +24,10 @@ def homework():
 
 
 @app.route("/")
-@app.route("/show_tasks")
-def show_tasks():
-    homework = mongo.db.homework.find()
-    return render_template("leads.html", homework=homework)
+@app.route("/lead_tasks")
+def lead_tasks():
+    lead_homework = mongo.db.homework.find()
+    return render_template("leads.html", lead_homework=lead_homework)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -79,8 +79,6 @@ def login():
     return render_template("login.html")
 
 
-
-
 @app.route("/logout")
 def logout():
     flash("You are now logged out of the site")
@@ -91,6 +89,12 @@ def logout():
 @app.route("/calendar")
 def calendar():
     return render_template("calendar.html")
+
+
+@app.route("/add_task")
+def add_task():
+    return render_template("add_tasks.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
