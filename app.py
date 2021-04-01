@@ -93,7 +93,8 @@ def calendar():
 
 @app.route("/add_task")
 def add_task():
-    return render_template("add_tasks.html")
+    sections = mongo.db.sections.find().sort("section_name")
+    return render_template("add_tasks.html", sections=sections )
 
 
 if __name__ == "__main__":
