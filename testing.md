@@ -19,3 +19,8 @@ Media Queries used to use smaller text as screen size gets smaller
 Card panels jumped up and caused lower card panel to move to the bottom of the page when opened.
 **Fix**
 Realised that it was due to the card class being used to change the height of the card. Changed the CSS to use the card-title class. Cards now function as intended
+
+**Issue**
+The flash on login now says Welcome, None
+**Fix**
+Corrected the code in app.py from users to username

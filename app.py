@@ -64,7 +64,7 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("users")))
+                    flash("Welcome, {}".format(request.form.get("username")))
                     return render_template("homework.html")
             else:
                 # passwords do not match
