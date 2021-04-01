@@ -113,6 +113,16 @@ header a:hover {
     font-size: 15px !important;
 }
 
+/* Add task form */
+
+.add-tasks-form {
+    border-color: #4d4455;
+    background-color: white;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style:solid;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1393px) {
