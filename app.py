@@ -129,6 +129,13 @@ def edit_task(homework_id):
     sections = mongo.db.sections.find().sort("section_name", 1)
     return render_template("edit_task.html", homework=homework, sections=sections)
 
+
+@app.route("/delete_task/<homework_id>")
+def delete_task(homework_id):
+    mongo.db.homework.remove({"_id": ObjectId(homework_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("homework"))
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
