@@ -15,7 +15,7 @@
                 {{ homework.song_name }}<br>
                 Due Date: {{ homework.due_date }}
                 <a href="" class="btn-small submit-button done-button white">Done</a>    
-                <a href="" class="btn-small submit-button edit-button white">Edit</a> 
+                <a href="{{ url_for('edit_task', homework_id=homework._id) }}" class="btn-small submit-button edit-button white">Edit</a> 
             </div>
             <div class="card-reveal">
                 <div class="card-title grey-text text-darken-4">{{ homework.song_name }}<i

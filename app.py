@@ -110,6 +110,13 @@ def add_task():
     return render_template("add_tasks.html", sections=sections)
 
 
+@app.route("/edit_task/<homework_id>", methods=["GET", "POST"])
+def edit_task(homework_id):
+    homework = mongo.db.homework.find_one({"_id": ObjectId(homework_id)})
+
+    sections = mongo.db.sections.find().sort("section_name", 1)
+    return render_template("edit_task.html", homework=homework, sections=sections)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
