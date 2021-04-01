@@ -113,6 +113,10 @@ header a:hover {
     font-size: 15px !important;
 }
 
+.task-set-by {
+    font-size:12px !important;
+}
+
 /* Add task form */
 
 .add-tasks-form {

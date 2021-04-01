@@ -8,18 +8,19 @@
 
 <div class="row">
     
-    {% for lead_homework in lead_homework %}
+    {% for homework in homework %}
     <div class="col s10 offset-s1 m6 l4">
         <div class="card white-text pink accent-1">
             <div class="card-title activator card-content center-align"><i class="fas fa-music"></i>
-                {{ lead_homework.song_name }}<br>
-                Due Date: {{ lead_homework.due_date }}
+                {{ homework.song_name }}<br>
+                Due Date: {{ homework.due_date }}
             </div>
             <div class="card-reveal">
-                <div class="card-title grey-text text-darken-4">{{ lead_homework.song_name }}<i
+                <div class="card-title grey-text text-darken-4">{{ homework.song_name }}<i
                         class="fas fa-times right"></i>
-                    <p class="task-title">{{ lead_homework.task_title }}</p>
-                    <p class="task-description">{{ lead_homework.task_description }}</p>
+                    <p class="task-title">{{ homework.task_title }}</p>
+                    <p class="task-description">{{ homework.task_description }}</p>
+                    <p class = "task-set-by">Task set by {{ homework.created_by }}</p>
                 </div>
             </div>
         </div>

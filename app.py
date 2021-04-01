@@ -26,8 +26,8 @@ def homework():
 @app.route("/")
 @app.route("/lead_tasks")
 def lead_tasks():
-    lead_homework = mongo.db.homework.find()
-    return render_template("leads.html", lead_homework=lead_homework)
+    homework = mongo.db.homework.find()
+    return render_template("leads.html", homework=homework)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -91,10 +91,23 @@ def calendar():
     return render_template("calendar.html")
 
 
-@app.route("/add_task")
+@app.route("/add_task", methods=["GET", "POST"])
 def add_task():
-    sections = mongo.db.sections.find().sort("section_name")
-    return render_template("add_tasks.html", sections=sections )
+    if request.method == "POST":
+        task = {
+            "section_name": request.form.get("section_name"),
+            "song_name": request.form.get("song_name"),
+            "task_title": request.form.get("task_title"),
+            "due_date": request.form.get("due_date"),
+            "task_description": request.form.get("task_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.homework.insert_one(task)
+        flash("New Task Added Successfully")
+        return redirect(url_for("homework"))
+    
+    sections = mongo.db.sections.find().sort("section_name", 1)
+    return render_template("add_tasks.html", sections=sections)
 
 
 if __name__ == "__main__":
