@@ -112,8 +112,20 @@ def add_task():
 
 @app.route("/edit_task/<homework_id>", methods=["GET", "POST"])
 def edit_task(homework_id):
-    homework = mongo.db.homework.find_one({"_id": ObjectId(homework_id)})
+    if request.method == "POST":
+        submit = {
+            "section_name": request.form.get("section_name"),
+            "song_name": request.form.get("song_name"),
+            "task_title": request.form.get("task_title"),
+            "due_date": request.form.get("due_date"),
+            "task_description": request.form.get("task_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.homework.update({"_id": ObjectId(homework_id)}, submit)
+        flash("Task Successfully Updated")
+        return redirect(url_for("homework"))
 
+    homework = mongo.db.homework.find_one({"_id": ObjectId(homework_id)})
     sections = mongo.db.sections.find().sort("section_name", 1)
     return render_template("edit_task.html", homework=homework, sections=sections)
 
