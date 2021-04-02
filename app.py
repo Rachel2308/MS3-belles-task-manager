@@ -27,12 +27,14 @@ def homework():
 @app.route("/lead_tasks")
 def lead_tasks():
     homework = mongo.db.homework.find()
-    return render_template("leads.html", homework=homework)
+    users = mongo.db.users.find()
+    return render_template("leads.html", homework=homework, users=users)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        is_musicteam = "on" if request.form.get("is_musicteam") else "off"
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -42,7 +44,8 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "is_musicteam": is_musicteam
         }
         mongo.db.users.insert_one(register)
 
@@ -84,11 +87,6 @@ def logout():
     flash("You are now logged out of the site")
     session.pop("user")
     return redirect(url_for("login"))
-
-
-@app.route("/calendar")
-def calendar():
-    return render_template("calendar.html")
 
 
 @app.route("/add_task", methods=["GET", "POST"])
@@ -135,6 +133,7 @@ def delete_task(homework_id):
     mongo.db.homework.remove({"_id": ObjectId(homework_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("homework"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

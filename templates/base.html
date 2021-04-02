@@ -35,9 +35,9 @@
                         <li><a href="{{ url_for('add_task') }}" class="text-shadow"><i class="fas fa-plus"></i>  Add Task</a></li>
                         <li><a href="{{ url_for('homework') }}" class="text-shadow"><i class="fas fa-list"></i>  View Tasks</a></li>
                         <li><a href="{{ url_for('logout') }}" class="text-shadow"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
-                    {% else %}
-                        
-                     
+                    {% else %}  
+                        <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>  Register</a></li>
+                        <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> Log In</a></li>                                  
                     {% endif %}                  
                 </ul>
             </div>

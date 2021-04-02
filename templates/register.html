@@ -6,6 +6,18 @@
 <div class="row">
     <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for ('register') }}">
         <div class="card-panel registration-form">
+
+            <div class="row">
+				<div class="input-field col s6 offset-s3">
+					<div class="switch">                        
+						<label for="is_musicteam">
+                            <input type="checkbox" id="is_musicteam" name="is_musicteam">
+                            <span class="lever"></span>
+                            Are you a member of the music team?
+                        </label>
+					</div>
+				</div>
+			</div>
             <!-- Enter Username -->
             <div class="row">
                 <div class="input-field registration-form col s10 offset-s1">
