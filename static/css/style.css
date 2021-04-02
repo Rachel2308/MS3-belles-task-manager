@@ -134,6 +134,21 @@ header a:hover {
     margin-left: 50px;
 }
 
+.modal {
+    border-radius: 10px;
+}
+
+
+.modal-content {
+    color: #616161;
+    }
+
+modal-close {
+    border-radius: 10px;
+    position: relative;
+    margin-top: 100px;
+}
+
 /* Add task form */
 
 .add-tasks-form {

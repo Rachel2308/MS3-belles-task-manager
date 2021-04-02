@@ -18,7 +18,21 @@
                 Due Date: {{ homework.due_date }}
                 
                     {% if users.is_musicteam == "on" %}
-                        <a href="{{ url_for('delete_task', homework_id=homework._id) }}" class="btn-small submit-button done-button white">Done</a>    
+                        <!-- Modal Trigger -->
+                <a class="red text-white btn modal-trigger" href="#modal1">Delete</a>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Delete Task</h4>
+                        <p>Are you sure you wish to delete this task?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ url_for ('homework') }}" class="modal-close pink lighten-2 white-text form-button btn-flat">Cancel</a>
+                        <a href="{{ url_for ('delete_task', homework_id=homework._id) }}" class="modal-close red accent-4 white-text form-button btn-flat">Delete</a>
+                    </div>
+                </div>
+    
                         <a href="{{ url_for('edit_task', homework_id=homework._id) }}" class="btn-small submit-button edit-button white">Edit</a> 
                     {% endif %}
                 

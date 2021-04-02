@@ -84,6 +84,8 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
+            "firstname": request.form.get("firstname").lower(),
+            "surname": request.form.get("surname").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "is_musicteam": is_musicteam
         }
