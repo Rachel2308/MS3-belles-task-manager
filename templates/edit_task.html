@@ -11,9 +11,9 @@
             <div class="input-field col s12">
                 <i class="fas fa-microphone prefix pink-text text-accent-1"></i>
                 <select id="section_name" name="section_name" class="validate" required>
-                    <option value="" disabled selected>Choose Section or Whole Chorus</option>
+                    <option value="" disabled>Choose Section or Whole Chorus</option>
                     {% for section in sections %}
-                        {% if homework.section_name == homework.section_name %}
+                        {% if section.section_name == homework.section_name %}
                             <option value="{{ section.section_name }}" selected>{{ section.section_name }}</option>
                         {% else %}
                             <option value="{{ section.section_name }}">{{ section.section_name }}</option> 
@@ -66,9 +66,9 @@
         <div class="row">
             <div class="col s4 offset-s4 ">
                 <!--Cancel changes button-->
-                <a href="{{ url_for('homework') }}" class="btn-large red submit-button">Cancel</a>
+                <a href="{{ url_for('homework') }}" class="btn-large red form-button">Cancel</a>
                 <!--Submit changes button-->
-                <button type="submit" class="btn-large pink accent-1 submit-button">
+                <button type="submit" class="btn-large pink accent-1 form-button">
                     Save Changes 
                 </button>
             </div>

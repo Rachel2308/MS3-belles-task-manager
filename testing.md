@@ -24,3 +24,8 @@ Realised that it was due to the card class being used to change the height of th
 The flash on login now says Welcome, None
 **Fix**
 Corrected the code in app.py from users to username
+
+**Issue**
+When updating the tasks, the task changed to "Whole Chorus"
+**Fix**
+Amended code from {% if homework.section_name == homework.section_name %} to {% if section.section_name == homework.section_name %}

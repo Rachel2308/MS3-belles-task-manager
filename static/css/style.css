@@ -36,11 +36,11 @@ header a:hover {
     background-color: #fff8ff;
 }
 
-.submit-button {
+.form-button {
     border-radius: 10px;
 }
 
-.submit-button:hover {
+.form-button:hover {
     color: #424242;
     transform: scale(1.1);
     

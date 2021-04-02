@@ -27,8 +27,48 @@ def homework():
 @app.route("/lead_tasks")
 def lead_tasks():
     homework = mongo.db.homework.find()
-    users = mongo.db.users.find()
+    users = mongo.db.users.find_one({"username": session['user']})
     return render_template("leads.html", homework=homework, users=users)
+
+
+@app.route("/")
+@app.route("/musicteam_tasks")
+def musicteam_tasks():
+    homework = mongo.db.homework.find()
+    users = mongo.db.users.find_one({"username": session['user']})
+    return render_template("musicteam.html", homework=homework, users=users)
+
+
+@app.route("/")
+@app.route("/wholechorus_tasks")
+def wholechorus_tasks():
+    homework = mongo.db.homework.find()
+    users = mongo.db.users.find_one({"username": session['user']})
+    return render_template("wholechorus.html", homework=homework, users=users)
+
+
+@app.route("/")
+@app.route("/tenor_tasks")
+def tenor_tasks():
+    homework = mongo.db.homework.find()
+    users = mongo.db.users.find_one({"username": session['user']})
+    return render_template("tenor.html", homework=homework, users=users)
+
+
+@app.route("/")
+@app.route("/bari_tasks")
+def bari_tasks():
+    homework = mongo.db.homework.find()
+    users = mongo.db.users.find_one({"username": session['user']})
+    return render_template("bari.html", homework=homework, users=users)
+
+
+@app.route("/")
+@app.route("/bass_tasks")
+def bass_tasks():
+    homework = mongo.db.homework.find()
+    users = mongo.db.users.find_one({"username": session['user']})
+    return render_template("bass.html", homework=homework, users=users)
 
 
 @app.route("/register", methods=["GET", "POST"])
