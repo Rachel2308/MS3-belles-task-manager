@@ -107,6 +107,8 @@ header a:hover {
     height: 300px;
 }
 
+
+
 .task-title {
     font-size: 20px !important;
 }
@@ -125,13 +127,15 @@ header a:hover {
     color: #616161;
     
 }
-
-.done-button {
-    margin-right: 50px;
+.inline {
+   display:inline-block !important;
+   margin-right:5px !important;
 }
 
-.edit-button {
-    margin-left: 50px;
+.task-buttons {
+    bottom: 10%;
+    left: 10%
+    
 }
 
 .modal {
@@ -164,10 +168,16 @@ modal-close {
 /* Media Queries */
 
 @media screen and (max-width: 1393px) {
+    .card-content {
+    font-size: 20px !important;
+}
 	
 }
 
 @media screen and (max-width: 992px) {
+    .card-content {
+    font-size: 20px !important;
+}
 	
 }
 

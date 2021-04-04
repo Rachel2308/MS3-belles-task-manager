@@ -19,7 +19,7 @@
                 
                     {% if users.is_musicteam == "on" %}
                         <!-- Modal Trigger -->
-                <a class="red text-white btn modal-trigger" href="#modal1">Delete</a>
+                <a class="red accent-4 form-button text-white btn modal-trigger" href="#modal1">Delete</a>
 
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
   
-                        <a href="{{ url_for('edit_task', homework_id=homework._id) }}" class="btn-small submit-button edit-button white">Edit</a> 
+                        <a href="{{ url_for('edit_task', homework_id=homework._id) }}" class="btn-small form-button submit-button edit-button white">Edit</a> 
                     {% endif %}
                 
             </div>

@@ -2,54 +2,66 @@
 {% block content %}
 
 <h3 class="center-align page-title">Bass Tasks</h3>
-<div class="center-align">All tasks have been set by either Lucy or your section lead, just click on the song title for more info. Please give us a shout if there's
+<div class="center-align">All tasks have been set by either Lucy or your section lead, just click on the song title for
+    more info. Please give us a shout if there's
     anything you're unsure of!</div>
 
 
 <div class="row">
-    
+
     {% for homework in homework %}
     {% if homework.section_name|lower == "bass"|lower %}
-    
+
     <div class="col s10 offset-s1 m6 l4">
         <div class="card white-text pink accent-1">
             <div class="card-title activator card-content center-align"><i class="fas fa-music"></i>
                 {{ homework.song_name }}<br>
                 Due Date: {{ homework.due_date }}
-                
-                    {% if users.is_musicteam == "on" %}
-                        <!-- Modal Trigger -->
-                <a class="red text-white btn modal-trigger" href="#modal1">Delete</a>
 
-                <!-- Modal Structure -->
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <h4>Delete Task</h4>
-                        <p>Are you sure you wish to delete this task?</p>
+                {% if users.is_musicteam == "on" %}
+                <!-- Modal Trigger -->
+                <div class="container task-buttons">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <a href="{{ url_for('edit_task', homework_id=homework._id) }}"
+                                class="btn-small form-button submit-button edit-button white">Edit</a>
+                            {% endif %}
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <a href="{{ url_for ('homework') }}" class="modal-close pink lighten-2 white-text form-button btn-flat">Cancel</a>
-                        <a href="{{ url_for ('delete_task', homework_id=homework._id) }}" class="modal-close red accent-4 white-text form-button btn-flat">Delete</a>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <a class="red accent-4 form-button text-white btn modal-trigger" href="#modal1">Delete</a>
+
+                            <!-- Modal Structure -->
+                            <div id="modal1" class="modal">
+                                <div class="modal-content">
+                                    <h4>Delete Task</h4>
+                                    <p>Are you sure you wish to delete this task?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="{{ url_for ('homework') }}"
+                                        class="modal-close pink lighten-2 white-text form-button btn-flat">Cancel</a>
+                                    <a href="{{ url_for ('delete_task', homework_id=homework._id) }}"
+                                        class="modal-close red accent-4 white-text form-button btn-flat">Delete</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-  
-                        <a href="{{ url_for('edit_task', homework_id=homework._id) }}" class="btn-small submit-button edit-button white">Edit</a> 
-                    {% endif %}
-                
             </div>
             <div class="card-reveal">
                 <div class="card-title grey-text text-darken-4">{{ homework.song_name }}<i
                         class="fas fa-times right"></i>
                     <p class="task-title">{{ homework.task_title }}</p>
                     <p class="task-description">{{ homework.task_description }}</p>
-                    <p class = "task-set-by">Task set by {{ homework.created_by }}</p>
+                    <p class="task-set-by">Task set by {{ homework.created_by }}</p>
                 </div>
             </div>
         </div>
     </div>
     {% endif %}
     {% endfor %}
-    
+
 </div>
 
 
