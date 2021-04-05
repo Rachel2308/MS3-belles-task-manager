@@ -45,10 +45,11 @@
 
     **Issue**
 
-    The Belles of Three Spires text in the header will take the user to the homework.html page even when not logged in. 
+    The Belles of Three Spires text in the header will take the user to the homework.html page even when not logged in causing errors. 
 
     **Fix**
-    **COMPLETE THIS WHEN SORTED**
+    
+    If statement added to base.html so that link goes to Login page if not logged in otherwise it links to the View Tasks page
 
 
 ## **User testing**
@@ -59,7 +60,7 @@
     * When logged in 
         * "The Belles of Three Spires" title links to the View Tasks page
         * The "Add Task", "View Tasks" and "Log Out" links all work and are visible when users are logged in
-        
+
     * When not logged in, 
         * "The Belles of Three Spires" title links to the Login page
         * Only the "Register" and "Login" links all work and are the only links that are visible when users are not logged in
