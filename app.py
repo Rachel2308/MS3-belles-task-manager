@@ -27,48 +27,48 @@ def homework():
 @app.route("/lead_tasks")
 def lead_tasks():
     homework = mongo.db.homework.find()
-    users = mongo.db.users.find_one({"username": session['user']})
-    return render_template("leads.html", homework=homework, users=users)
+    user = mongo.db.users.find_one({"username": session['user']})
+    return render_template("leads.html", homework=homework, user=user)
 
 
 @app.route("/")
 @app.route("/musicteam_tasks")
 def musicteam_tasks():
     homework = mongo.db.homework.find()
-    users = mongo.db.users.find_one({"username": session['user']})
-    return render_template("musicteam.html", homework=homework, users=users)
+    user = mongo.db.users.find_one({"username": session['user']})
+    return render_template("musicteam.html", homework=homework, user=user)
 
 
 @app.route("/")
 @app.route("/wholechorus_tasks")
 def wholechorus_tasks():
     homework = mongo.db.homework.find()
-    users = mongo.db.users.find_one({"username": session['user']})
-    return render_template("wholechorus.html", homework=homework, users=users)
+    user = mongo.db.users.find_one({"username": session['user']})
+    return render_template("wholechorus.html", homework=homework, user=user)
 
 
 @app.route("/")
 @app.route("/tenor_tasks")
 def tenor_tasks():
     homework = mongo.db.homework.find()
-    users = mongo.db.users.find_one({"username": session['user']})
-    return render_template("tenor.html", homework=homework, users=users)
+    user = mongo.db.users.find_one({"username": session['user']})
+    return render_template("tenor.html", homework=homework, user=user)
 
 
 @app.route("/")
 @app.route("/bari_tasks")
 def bari_tasks():
     homework = mongo.db.homework.find()
-    users = mongo.db.users.find_one({"username": session['user']})
-    return render_template("bari.html", homework=homework, users=users)
+    user = mongo.db.users.find_one({"username": session['user']})
+    return render_template("bari.html", homework=homework, user=user)
 
 
 @app.route("/")
 @app.route("/bass_tasks")
 def bass_tasks():
     homework = mongo.db.homework.find()
-    users = mongo.db.users.find_one({"username": session['user']})
-    return render_template("bass.html", homework=homework, users=users)
+    user = mongo.db.users.find_one({"username": session['user']})
+    return render_template("bass.html", homework=homework, user=user)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -106,8 +106,8 @@ def login():
 
         if existing_user:
             # check passwords match
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+            if (check_password_hash(
+                existing_user["password"], request.form.get("password"))):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
                     return render_template("homework.html")
@@ -167,7 +167,8 @@ def edit_task(homework_id):
 
     homework = mongo.db.homework.find_one({"_id": ObjectId(homework_id)})
     sections = mongo.db.sections.find().sort("section_name", 1)
-    return render_template("edit_task.html", homework=homework, sections=sections)
+    return render_template(
+        "edit_task.html", homework=homework, sections=sections)
 
 
 @app.route("/delete_task/<homework_id>")

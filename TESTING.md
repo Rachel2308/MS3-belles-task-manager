@@ -55,6 +55,17 @@
 
 ### **Page**
 
+* #### Header
+    * When logged in 
+        * "The Belles of Three Spires" title links to the View Tasks page
+        * The "Add Task", "View Tasks" and "Log Out" links all work and are visible when users are logged in
+        
+    * When not logged in, 
+        * "The Belles of Three Spires" title links to the Login page
+        * Only the "Register" and "Login" links all work and are the only links that are visible when users are not logged in
+
+
+
 * #### Log in
     * Username field gives an error, shown by a red line if a username is not entered
     * Password field gives an error, shown by a red line if a password is not entered

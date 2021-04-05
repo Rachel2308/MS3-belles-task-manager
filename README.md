@@ -120,7 +120,7 @@ The site is responsive across all screen sizes. The layout of the pages change d
 ### Features Changed from Original Wireframe
 
 ### 1. Calendar
-Originally I wanted to have a google calendar linked to the front page of the site where the members of the Belles can see any events that are coming up. Once this was enbedded it did not look right for the site
+Originally I wanted to have a google calendar linked to the front page of the site where the members of the Belles can see any events that are coming up. Once this was embedded it did not look right for the site
 and it is not possible to change the look of the calendar within the page. The colour scheme did not work with the rest of the site and I therefore made the decision to delete this from the site. 
 
 ---
@@ -157,15 +157,11 @@ and it is not possible to change the look of the calendar within the page. The c
 
 ## Deployment
 
-### GitHub Pages
+### Heroku
 
-**The project was deployed to GitHub Pages using the following steps**
+** **
 
-1. Log in to GitHub and locate the GitHub Repository
-2. Click the "Settings" button in the menu at the top of the Repository
-3. Scroll down the Settings page to the "GitHub Pages" Section
-4. Under "Source", click the dropdown called "None" and select "Master Branch".
-5. Scroll back down through the page to find the site link in the "GitHub Pages" section.
+
 
 ---
 
