@@ -2,120 +2,165 @@
 
 ## **Bugs**
 
-* __Issue__
+* **Issue**
   
   Form did not show all of the placeholder text in smaller screen
 
-__Fix__
+    **Fix**
   
   Form and text boxes made wider for small screens
 
-**Issue**
-Title in header too big for smaller screen and drops down outside of the header
-**Fix**
-Media Queries used to use smaller text as screen size gets smaller
+* **Issue**
 
-**Issue**
-Card panels jumped up and caused lower card panel to move to the bottom of the page when opened.
-**Fix**
-Realised that it was due to the card class being used to change the height of the card. Changed the CSS to use the card-title class. Cards now function as intended
+    Title in header too big for smaller screen and drops down outside of the header
 
-**Issue**
-The flash on login now says Welcome, None
-**Fix**
-Corrected the code in app.py from users to username
+    **Fix**
 
-**Issue**
-When updating the tasks, the task changed to "Whole Chorus"
-**Fix**
-Amended code from {% if homework.section_name == homework.section_name %} to {% if section.section_name == homework.section_name %}
+    Media Queries used to use smaller text as screen size gets smaller
 
-**Issue**
-The Belles of Three Spires text in the header will take the user to the homework.html page even when not logged in. 
+
+*   **Issue**
+
+    Card panels jumped up and caused lower card panel to move to the bottom of the page when opened.
+
+    **Fix**
+
+    Realised that it was due to the card class being used to change the height of the card. Changed the CSS to use the card-title class. Cards now function as intended
+
+*   **Issue**
+
+    The flash on login now says Welcome, None
+
+    **Fix**
+
+    Corrected the code in app.py from users to username
+
+    **Issue**
+
+    When updating the tasks, the task changed to "Whole Chorus"
+
+    **Fix**
+
+    Amended code from {% if homework.section_name == homework.section_name %} to {% if section.section_name == homework.section_name %}
+
+    **Issue**
+
+    The Belles of Three Spires text in the header will take the user to the homework.html page even when not logged in. 
+
+    **Fix**
+    **COMPLETE THIS WHEN SORTED**
 
 
 ## **User testing**
 
-**Page**
-*Log in
-    *Username field gives an error, shown by a red line if a username is not entered
-    *Password field gives an error, shown by a red line if a password is not entered
-    *If the incorrect username and/or password is entered, a flash message stating that "Username and/or password is incorrect flashes up at the top of the screen.
-    *When log in details are correct, the LOG IN button takes the user to the "Homework Tasks" page. A flash message then appears at the top of the screen stating
-        "Welcome, {username}
-    *If the user is a new user, they can press the "Need to register? Please click here" button and will then be redirected to the Registration page.
+### **Page**
 
+* #### Log in
+    * Username field gives an error, shown by a red line if a username is not entered
+    * Password field gives an error, shown by a red line if a password is not entered
+    * If the incorrect username and/or password is entered, a flash message stating that "Username and/or password is incorrect flashes up at the top of the screen.
+    * When log in details are correct, the LOG IN button takes the user to the "Homework Tasks" page. A flash message then appears at the top of the screen stating
+        "Welcome, {username}
+    * If the user is a new user, they can press the "Need to register? Please click here" button and will then be redirected to the Registration page.
+    * "Register" link in header links to registration page
+    * "Log In" link is not shown once the user is logged in
    
 
-*Registration
+* #### Registration
+    * If nothing entered in username field, error is shown by red underline.
+    * If nothing entered in first name field, error is shown by red underline.
+    * If nothing entered in surname field, error is shown by red underline.
+    * If nothing entered in password field, error is shown by red underline.
+    * If password of fewer than 5 characters entered, error is shown by red underline
+    * If a user tries to register a username that is already registered, a flashed message "User is already registered" is displayed 
+    * Clicking on the music team toggle button turns on the button, and the user is added as a member of the music team. 
+    * When all information is completed, the registration button saves the user information to mongodb, and the user is redirected to the homepage.
+    * "Register" link is not shown when the user is logged in
 
 
-*Log out
+* #### Log out
+    * "Log Out" button only shows when the user is log in
+    * Clicking on log out will log member out of the site, return user to the Log In screen and display a flashed message.
 
 
-*Add_tasks
-    *when logged in as music team
+* #### Add_tasks
+    * When logged in as music team
 
 
-    *when logged in as standard member
-
- 
-
-
-
-*Edit_tasks
-    *when logged in as music team
-
-
-    *when logged in as standard member
-
- 
-
-*delete_task
-    *when logged in as music team
-
-
-    *when logged in as standard member
+    * When logged in as standard member
+        *
 
  
 
-*whole_chorus
-    *when logged in as music team
 
 
-    *when logged in as standard member
-
- 
-
-*lead.html
-    *when logged in as music team
-
-
-    *when logged in as standard member
-
- 
-
-*tenor.html
-    *when logged in as music team
+* #### Edit_tasks
+    * When logged in as music team
+        * Edit button only shows when logged in as a member of the music team
+        * Edit button takes you to the edit task page, where all of the existing data is prefilled into the fields
+        * Hitting cancel returns you to the View Tasks homepage
+        * Amending the task will update the database correctly
+        * Hitting the SAVE CHANGES button will return the user to the View Tasks homepage and a flashed message is displayed "Task Successfully Updated"
 
 
-    *when logged in as standard member
+    * When logged in as standard member
+        * "Edit" button not visible when not logged in as a member of the music team
 
  
 
-*bari.html
-    *when logged in as music team
+* #### delete_task
+    * When logged in as music team
+        * Delete button only shows when logged in as a member of the music team
+        * Hitting the Delete button displays a modal asking you to confirm if the user wishes to delete the task.
+            * Hitting Cancel on this modal returns the user to the View Tasks homepage
+            * Hitting Delete on this modal will return the user to the View Tasks homepage and display a flashed message confirming deletion. The deleted task will successfully be removed from the database
+        * Hitting cancel returns you to the View Tasks homepage
+        * Amending the task will update the database correctly
+        * Hitting the SAVE CHANGES button will return the user to the View Tasks homepage and a flashed message is displayed "Task Successfully Updated"
 
 
-    *when logged in as standard member
+    * When logged in as standard member
+        * "Delete" button not visible when not logged in as a member of the music team
 
  
 
-*bass.html
-    *when logged in as music team
+* #### whole_chorus
+    * When logged in as music team
 
 
-    *when logged in as standard member
+    * When logged in as standard member
+
+ 
+
+* #### lead.html
+    * When logged in as music team
+
+
+    * When logged in as standard member
+
+ 
+
+* #### tenor.html
+    * When logged in as music team
+
+
+    * When logged in as standard member
+
+ 
+
+* #### bari.html
+    * When logged in as music team
+
+
+    * When logged in as standard member
+
+ 
+
+* #### bass.html
+    * When logged in as music team
+
+
+    * When logged in as standard member
 
  
 

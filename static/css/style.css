@@ -127,13 +127,9 @@ header a:hover {
     color: #616161;
     
 }
-.inline {
-   display:inline-block !important;
-   margin-right:5px !important;
-}
 
 .task-buttons {
-    bottom: 10%;
+    bottom: 20px;
     left: 10%
     
 }

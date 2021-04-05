@@ -25,7 +25,7 @@
                         <div class="col-xs-2">
                             <a href="{{ url_for('edit_task', homework_id=homework._id) }}"
                                 class="btn-small form-button submit-button edit-button white">Edit</a>
-                            {% endif %}
+                
                         </div>
                     </div>
                     <div class="row">
@@ -49,6 +49,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             <div class="card-reveal">
                 <div class="card-title grey-text text-darken-4">{{ homework.song_name }}<i
                         class="fas fa-times right"></i>

@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/homework")
-def homework():
+def homework():   
     return render_template("homework.html")
 
 
