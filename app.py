@@ -18,57 +18,64 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+@app.route("/")
 @app.route("/homework")
 def homework():   
     return render_template("homework.html")
 
 
-@app.route("/")
+
 @app.route("/lead_tasks")
 def lead_tasks():
-    homework = mongo.db.homework.find()
-    user = mongo.db.users.find_one({"username": session['user']})
-    return render_template("leads.html", homework=homework, user=user)
+    if 'user' in session:
+        homework = mongo.db.homework.find()
+        user = mongo.db.users.find_one({"username": session['user']})
+        return render_template("leads.html", homework=homework, user=user)
 
 
-@app.route("/")
+
 @app.route("/musicteam_tasks")
 def musicteam_tasks():
-    homework = mongo.db.homework.find()
-    user = mongo.db.users.find_one({"username": session['user']})
-    return render_template("musicteam.html", homework=homework, user=user)
+    if 'user' in session:
+        homework = mongo.db.homework.find()
+        user = mongo.db.users.find_one({"username": session['user']})
+        return render_template("musicteam.html", homework=homework, user=user)
 
 
-@app.route("/")
+
 @app.route("/wholechorus_tasks")
 def wholechorus_tasks():
-    homework = mongo.db.homework.find()
-    user = mongo.db.users.find_one({"username": session['user']})
-    return render_template("wholechorus.html", homework=homework, user=user)
+    if 'user' in session:
+        homework = mongo.db.homework.find()
+        user = mongo.db.users.find_one({"username": session['user']})
+        return render_template("wholechorus.html", homework=homework, user=user)
 
 
-@app.route("/")
+
 @app.route("/tenor_tasks")
 def tenor_tasks():
-    homework = mongo.db.homework.find()
-    user = mongo.db.users.find_one({"username": session['user']})
-    return render_template("tenor.html", homework=homework, user=user)
+    if 'user' in session:
+        homework = mongo.db.homework.find()
+        user = mongo.db.users.find_one({"username": session['user']})
+        return render_template("tenor.html", homework=homework, user=user)
 
 
-@app.route("/")
+
 @app.route("/bari_tasks")
 def bari_tasks():
-    homework = mongo.db.homework.find()
-    user = mongo.db.users.find_one({"username": session['user']})
-    return render_template("bari.html", homework=homework, user=user)
+    if 'user' in session:
+        homework = mongo.db.homework.find()
+        user = mongo.db.users.find_one({"username": session['user']})
+        return render_template("bari.html", homework=homework, user=user)
 
 
-@app.route("/")
+
 @app.route("/bass_tasks")
 def bass_tasks():
-    homework = mongo.db.homework.find()
-    user = mongo.db.users.find_one({"username": session['user']})
-    return render_template("bass.html", homework=homework, user=user)
+    if 'user' in session:
+        homework = mongo.db.homework.find()
+        user = mongo.db.users.find_one({"username": session['user']})
+        return render_template("bass.html", homework=homework, user=user)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -82,18 +89,28 @@ def register():
             flash("User is already registered")
             return redirect(url_for("register"))
 
-        register = {
-            "username": request.form.get("username").lower(),
-            "firstname": request.form.get("firstname").lower(),
-            "surname": request.form.get("surname").lower(),
-            "password": generate_password_hash(request.form.get("password")),
-            "is_musicteam": is_musicteam
-        }
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm-password")
+
+        if password != confirm_password:
+            flash("Passwords do not match")
+            return render_template("register.html")
+
+        if password == confirm_password:
+            register = {
+                "username": request.form.get("username").lower(),
+                "firstname": request.form.get("firstname").lower(),
+                "surname": request.form.get("surname").lower(),
+                "password": generate_password_hash(
+                    request.form.get("password")),
+                "is_musicteam": is_musicteam
+            }
         mongo.db.users.insert_one(register)
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
         return render_template("homework.html")
+
     return render_template("register.html")
 
 
