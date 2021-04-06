@@ -18,11 +18,46 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+@app.route("/")
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # check username exists
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # check passwords match
+            if (check_password_hash(
+                existing_user["password"], request.form.get("password"))):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(request.form.get("username")))
+                    return render_template("homework.html")
+            else:
+                # passwords do not match
+                flash("Username and/or password is incorrect")
+                return redirect(url_for("login"))
+
+        else: 
+            # username does not exist
+            flash("Username and/or password is incorrect")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    flash("You are now logged out of the site")
+    session.pop("user")
+    return redirect(url_for("login"))
+
 
 @app.route("/homework")
-def homework():   
-    return render_template("homework.html")
-
+def homework():
+    if 'user' in session:
+        user = mongo.db.users.find_one({"username": session['user']})
+        return render_template("homework.html", user=user)
 
 
 @app.route("/lead_tasks")
@@ -33,14 +68,12 @@ def lead_tasks():
         return render_template("leads.html", homework=homework, user=user)
 
 
-
 @app.route("/musicteam_tasks")
 def musicteam_tasks():
     if 'user' in session:
         homework = mongo.db.homework.find()
         user = mongo.db.users.find_one({"username": session['user']})
         return render_template("musicteam.html", homework=homework, user=user)
-
 
 
 @app.route("/wholechorus_tasks")
@@ -51,7 +84,6 @@ def wholechorus_tasks():
         return render_template("wholechorus.html", homework=homework, user=user)
 
 
-
 @app.route("/tenor_tasks")
 def tenor_tasks():
     if 'user' in session:
@@ -60,14 +92,12 @@ def tenor_tasks():
         return render_template("tenor.html", homework=homework, user=user)
 
 
-
 @app.route("/bari_tasks")
 def bari_tasks():
     if 'user' in session:
         homework = mongo.db.homework.find()
         user = mongo.db.users.find_one({"username": session['user']})
         return render_template("bari.html", homework=homework, user=user)
-
 
 
 @app.route("/bass_tasks")
@@ -112,41 +142,6 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/")
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        # check username exists
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if existing_user:
-            # check passwords match
-            if (check_password_hash(
-                existing_user["password"], request.form.get("password"))):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return render_template("homework.html")
-            else:
-                # passwords do not match
-                flash("Username and/or password is incorrect")
-                return redirect(url_for("login"))
-
-        else: 
-            # username does not exist
-            flash("Username and/or password is incorrect")
-            return redirect(url_for("login"))
-
-    return render_template("login.html")
-
-
-@app.route("/logout")
-def logout():
-    flash("You are now logged out of the site")
-    session.pop("user")
-    return redirect(url_for("login"))
-
-
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
     if request.method == "POST":
@@ -161,7 +156,7 @@ def add_task():
         mongo.db.homework.insert_one(task)
         flash("New Task Added Successfully")
         return redirect(url_for("homework"))
-    
+
     sections = mongo.db.sections.find().sort("section_name", 1)
     return render_template("add_tasks.html", sections=sections)
 

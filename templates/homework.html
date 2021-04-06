@@ -5,6 +5,7 @@
 
 <div class="row">
     
+    {% if user.is_musicteam == "on" %}
     <div class="col s12 m6 l4">
         <a href="{{ url_for('musicteam_tasks') }}">
             <div class="card-panel pink accent-1 section-link">
@@ -12,6 +13,7 @@
             </div>
         </a>
     </div>
+    {% endif %}
     
     <div class="col s12 m6 l4">
         <a href="{{ url_for('wholechorus_tasks') }}">
