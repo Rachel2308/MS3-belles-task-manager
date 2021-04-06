@@ -18,7 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
+
 @app.route("/homework")
 def homework():   
     return render_template("homework.html")
@@ -99,8 +99,6 @@ def register():
         if password == confirm_password:
             register = {
                 "username": request.form.get("username").lower(),
-                "firstname": request.form.get("firstname").lower(),
-                "surname": request.form.get("surname").lower(),
                 "password": generate_password_hash(
                     request.form.get("password")),
                 "is_musicteam": is_musicteam
@@ -114,6 +112,7 @@ def register():
     return render_template("register.html")
 
 
+@app.route("/")
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
