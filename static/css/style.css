@@ -115,7 +115,9 @@ header a:hover {
     height: 300px;
 }
 
-
+.card-links {
+    margin-top: 100px;
+}
 
 .task-title {
     font-size: 20px !important;
@@ -136,11 +138,7 @@ header a:hover {
     
 }
 
-/* .task-buttons {
-    bottom: 20px;
-    left: 10%
-    
-} */
+
 
 .modal {
     border-radius: 10px;
