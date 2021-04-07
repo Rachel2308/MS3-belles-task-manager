@@ -87,12 +87,11 @@ header a:hover {
 
 .section-link:hover {
     transform: scale(1.1);
+    color: black !important;
     
 }
 
-.section-link:hover {
-    color: black !important;
-}
+
 
 /* Flashes */
 
@@ -116,7 +115,7 @@ header a:hover {
 }
 
 .card-links {
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 .task-title {
@@ -138,7 +137,32 @@ header a:hover {
     
 }
 
+.delete-button {
+    background-color: #d50000;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+    border-radius: 10px;
+}
 
+.edit-button {
+    background-color: #FFFFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.edit-button:hover {
+    color: #ff80ab !important;
+}
+
+.delete-button:hover {
+    color: black !important;
+}
 
 .modal {
     border-radius: 10px;

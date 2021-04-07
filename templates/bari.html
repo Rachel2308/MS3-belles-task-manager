@@ -27,7 +27,7 @@
         <div class="card white-text pink accent-1">
             <div class="card-title activator card-content center-align"><i class="fas fa-music"></i>
                 {{ homework.song_name }}<br>
-                Due Date: {{ homework.due_date }}
+                By: {{ homework.due_date }}
                 
                 
                 {% if user.is_musicteam == "on" %}
@@ -35,8 +35,8 @@
                 <div class="card-action card-links">
                     
                         
-                            <a href="{{ url_for('edit_task', homework_id=homework._id) }}" class = "white-text section-link">Edit</a>             
-                            <a href="#{{ homework._id }}" class ="modal-trigger white-text section-link">Delete</a>
+                            <a href="{{ url_for('edit_task', homework_id=homework._id) }}" class = "grey-text text-darken-4 edit-button">Edit</a>             
+                            <a href="#{{ homework._id }}" class ="modal-trigger white-text delete-button">Delete</a>
                 </div>
                 
                             <!-- Modal Structure -->
