@@ -51,6 +51,29 @@
     
     If statement added to base.html so that link goes to Login page if not logged in otherwise it links to the View Tasks page
 
+    **Issue**
+
+    Deleting a task deleted the first task on the page, not the current
+
+    **Fix**
+
+    Code amended to target the current task
+
+    **Issue**
+
+    Deleting a task takes user back to main task page. Not great UX
+
+    **Fix**
+
+    Created @app.route entry for each section so that the delete button in the modal would route back to the section page. 
+
+    **Issue**
+
+    Editing a task takes user back to main task page. Not great UX
+
+    **Fix**
+
+    Created @app.route entry for each section so that the edit button in the modal would route back to the section page. 
 
 ## **User testing**
 
@@ -61,7 +84,7 @@
 * #### Header
     * When logged in 
         * "The Belles of Three Spires" title links to the View Tasks page
-        * The "Add Task", "View Tasks" and "Log Out" links all work and are visible when users are logged in
+        * The "View Tasks" and "Log Out" links all work and are visible when users are logged in
 
     * When not logged in, 
         * "The Belles of Three Spires" title links to the Login page

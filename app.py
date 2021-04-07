@@ -143,6 +143,7 @@ def register():
 
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
+    user = mongo.db.users.find_one({"username": session['user']})
     if request.method == "POST":
         task = {
             "section_name": request.form.get("section_name"),
@@ -157,7 +158,7 @@ def add_task():
         return redirect(url_for("homework"))
 
     sections = mongo.db.sections.find().sort("section_name", 1)
-    return render_template("add_tasks.html", sections=sections)
+    return render_template("add_tasks.html", sections=sections, user=user)
 
 
 @app.route("/edit_task/<homework_id>", methods=["GET", "POST"])
@@ -181,11 +182,46 @@ def edit_task(homework_id):
         "edit_task.html", homework=homework, sections=sections)
 
 
-@app.route("/delete_task/<homework_id>")
-def delete_task(homework_id):
+@app.route("/delete_task_bass/<homework_id>")
+def delete_task_bass(homework_id):
     mongo.db.homework.remove({"_id": ObjectId(homework_id)})
     flash("Task Successfully Deleted")
-    return redirect(url_for("homework"))
+    return redirect(url_for("bass_tasks"))
+
+
+@app.route("/delete_task_bari/<homework_id>")
+def delete_task_bari(homework_id):
+    mongo.db.homework.remove({"_id": ObjectId(homework_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("bari_tasks"))
+
+
+@app.route("/delete_task_lead/<homework_id>")
+def delete_task_lead(homework_id):
+    mongo.db.homework.remove({"_id": ObjectId(homework_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("lead_tasks"))
+
+
+@app.route("/delete_task_tenor/<homework_id>")
+def delete_task_tenor(homework_id):
+    mongo.db.homework.remove({"_id": ObjectId(homework_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("tenor_tasks"))
+
+
+@app.route("/delete_task_musicteam/<homework_id>")
+def delete_task_musicteam(homework_id):
+    mongo.db.homework.remove({"_id": ObjectId(homework_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("musicteam_tasks"))
+
+
+@app.route("/delete_task_wholechorus/<homework_id>")
+def delete_task_wholechorus(homework_id):
+    mongo.db.homework.remove({"_id": ObjectId(homework_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("wholechorus_tasks"))
 
 
 if __name__ == "__main__":

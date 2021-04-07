@@ -6,9 +6,9 @@
     more info. Please give us a shout if there's
     anything you're unsure of!</div>
 
-{% if user.is_musicteam == "on" %}
+
 <div class="row">      
- <div class="col s4 offset-s4 add-task-button">
+ <div class="col s8 offset-s2 m4 offset-m4 add-task-button">
         <a href="{{ url_for('add_task') }}">
             <div class="card-panel pink accent-1 section-link">
                 Add Tasks
@@ -16,7 +16,7 @@
         </a>
     </div> 
 </div>  
-{% endif %}
+
 
 <div class="row">
 
@@ -39,10 +39,10 @@
                                 class="btn-small form-button submit-button edit-button white">Edit</a>
                 
                         </div>
-                    </div>
+                    
                    
                     <!-- Modal Trigger -->
-                    <div class="row">
+                    
                         <div class="col-xs-2">
                             <a class="red accent-4 form-button text-white btn modal-trigger" href="#{{ homework._id }}">Delete</a>
                 
@@ -55,7 +55,7 @@
                                 <div class="modal-footer">
                                     <a href="{{ url_for ('homework') }}"
                                         class="modal-close pink lighten-2 white-text form-button btn-flat">Cancel</a>
-                                    <a href="{{ url_for ('delete_task', homework_id=homework._id) }}"
+                                    <a href="{{ url_for ('delete_task_bass', homework_id=homework._id) }}"
                                         class="modal-close red accent-4 white-text form-button btn-flat">Delete</a>
                                 </div>
                             </div>

@@ -33,6 +33,11 @@ header a:hover {
 .registration-form {
     border-radius: 10px;
     background-color: #fff8ff;
+    
+}
+
+.input-field {
+    max-width: 90%;
 }
 
 .form-button {
@@ -131,11 +136,11 @@ header a:hover {
     
 }
 
-.task-buttons {
+/* .task-buttons {
     bottom: 20px;
     left: 10%
     
-}
+} */
 
 .modal {
     border-radius: 10px;
@@ -190,7 +195,7 @@ modal-close {
 @media screen and (max-width: 576px) {
     .brand-logo {
         
-        font-size: 25px !important;
+        font-size: 23px !important;
         
     }
     
