@@ -27,9 +27,8 @@ header a:hover {
     margin-bottom: 50px;
 }
 
+
 /* Registration and Log in Form */
-
-
 
 .registration-form {
     border-radius: 10px;
@@ -98,6 +97,10 @@ header a:hover {
 
 
 /* Section task pages */
+
+.add-task-button {
+    margin-top: 30px;
+}
 
 .card {
     margin-top: 30px;  

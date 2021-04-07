@@ -56,6 +56,8 @@
 
 ### **Page**
 
+* Testing has been undertaken on devices down to 320px.
+
 * #### Header
     * When logged in 
         * "The Belles of Three Spires" title links to the View Tasks page

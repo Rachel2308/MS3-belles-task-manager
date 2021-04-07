@@ -2,21 +2,33 @@
 {% block content %}
 
 <h3 class="center-align page-title">Bari Tasks</h3>
-<div class="center-align">All tasks have been set by either Lucy or your section lead, just click on the song title for more info. Please give us a shout if there's
+<div class="center-align">All tasks have been set by either Lucy or your section lead, just click on the song title for
+    more info. Please give us a shout if there's
     anything you're unsure of!</div>
 
+{% if user.is_musicteam == "on" %}
+<div class="row">      
+ <div class="col s4 offset-s4">
+        <a href="{{ url_for('add_task') }}">
+            <div class="card-panel pink accent-1 section-link">
+                Add Tasks
+            </div>
+        </a>
+    </div> 
+</div>  
+{% endif %}
 
 <div class="row">
-    
+
     {% for homework in homework %}
     {% if homework.section_name|lower == "bari"|lower %}
-    
+
     <div class="col s10 offset-s1 m6 l4">
         <div class="card white-text pink accent-1">
             <div class="card-title activator card-content center-align"><i class="fas fa-music"></i>
                 {{ homework.song_name }}<br>
                 Due Date: {{ homework.due_date }}
-
+                
                 
                 {% if user.is_musicteam == "on" %}
                 <!-- Modal Trigger -->
@@ -28,10 +40,11 @@
                 
                         </div>
                     </div>
+                   
                     <div class="row">
                         <div class="col-xs-2">
                             <a class="red accent-4 form-button text-white btn modal-trigger" href="#modal1">Delete</a>
-
+                
                             <!-- Modal Structure -->
                             <div id="modal1" class="modal">
                                 <div class="modal-content">
@@ -48,23 +61,27 @@
                         </div>
                     </div>
                 </div>
+                {% endif %} 
             </div>
-            {% endif %}
+                
             
             <div class="card-reveal">
                 <div class="card-title grey-text text-darken-4">{{ homework.song_name }}<i
                         class="fas fa-times right"></i>
                     <p class="task-title">{{ homework.task_title }}</p>
                     <p class="task-description">{{ homework.task_description }}</p>
-                    <p class = "task-set-by">Task set by {{ homework.created_by }}</p>
+                    <p class="task-set-by">Task set by {{ homework.created_by }}</p>
                 </div>
             </div>
         </div>
     </div>
     {% endif %}
     {% endfor %}
-    
+
+  
+
 </div>
+
 
 
 {% endblock %}
