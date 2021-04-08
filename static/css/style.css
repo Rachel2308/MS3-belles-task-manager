@@ -144,6 +144,7 @@ header a:hover {
     padding-bottom: 5px;
     padding-top: 3px;
     border-radius: 10px;
+    margin-bottom: 20px !important;
 }
 
 .edit-button {
@@ -153,7 +154,7 @@ header a:hover {
     padding-bottom: 5px;
     padding-top: 3px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
 }
 
 .edit-button:hover {

@@ -5,10 +5,9 @@
 
 ![The Belles of Three Spires Site Homework Tracker]()
 
-This website was designed to create a homework tracker for the Belles of Three Spires Barbershop Chorus. It will enable the Belles' music team to be able to 
-set homework for the rest of the chorus, All other members of the choris will be able to see which part of which song they should be prioritising.
+This website was designed to create a homework tracker for the Belles of Three Spires Barbershop Chorus. It will enable the Belles' music team to be able to set homework for the rest of the chorus, All other members of the choris will be able to see which part of which song they should be prioritising.
 
-![](/documentation/am-i-responsive-belles.PNG)
+![Am I responsive](documentation/images/MS3-am-I-responsive.png)
 
 ## User Experience (UX)
 
@@ -51,70 +50,62 @@ which fits in with the simple style of the site and also contrasts nicely with t
 
 ### Wireframes
 
-The wireframes for the site were created in balsamiq and uploaded as a pdf. They can be found as a pdf file [here.](./documentation/Homework-Tracker-Wireframe-pdf.pdf)
+The wireframes for the site were created in balsamiq and uploaded as a pdf. They can be found as a pdf file [here.](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/Homework-Tracker-Wireframe%20pdf.pdf)
 
 ---
 
 ## Features
 
+### Users
+
+There are 2 levels of user for the site, this is selected on the registration form by checking the "Music Team" button. This will tage the user as either being a member of the music team, or a standard member. Only a member of the music team can add tasks, or edit and delete existing tasks.
+
 ### Existing Features
 
 The site is responsive across all screen sizes. The layout of the pages change depending on the size of screen. This has created a tidy and clean look on all screens.
 
-### 1. 
+### 1. Log in / Registration Page
+* The log in and registration pages are acccessed when a user first accesses the site. The pages link between the 2 pages so that users can easily select whether they need to log in or register.
+
+![](documentation/images/existing-feature-1.png)
+
+### 2. Registration Page
+* The registration page enables a user to create an account. This is where they can create their username and password to log on to the site with, and also specify whether or not they are a member of the music team.
+
+![](documentation/images/existing-feature-2.png)
+
+### 3. Homework Tasks Page
+* This page holds the links to all of the section pages. Users will click on the relevant link and get taken to the page holding the tasks that they need to follow.
+
+![](documentation/images/existing-feature-3.png)
+
+### 4. Section Pages
+* There are 6 individual section pages, one for each musical section, one for the music team, and one for the whole chorus. The tasks are filtered into these pages depending on which section they are allocated to when the tasks are added. This page also has the link to add a new task, and when a member of the music team is logged in, they can edit or delete the tasks from here too. 
+
+![](documentation/images/existing-feature-4.png)
+
+### 5. Add Task
+* New tasks can be added from the Add New Task page that is linked from the individual section pages. This is where a member of the music team can add a task. In selecting the correct section from the dropdown section at the top of the form, the task will be correctly filtered into the relevant section page. 
+
+![](documentation/images/existing-feature-5.png)
+
+### 6. Edit / Delete Tasks
+* Existing tasks can be edited or deleted from the cards on the section pages. When a task is edited, it will have the existing data prefilled into the form to make it easier to edit correctly. When the user selects to delete a task, a pop up box will appear to check whether the user would like to delete the task. The edit and delete buttons are only available when a user is logged in as a member of the music team.
+
+![](documentation/images/existing-feature-6.png)
 
 
-
-![]()
-
-### 2.
-
-
-
-![]()
-
-### 3.
-
-
-
-### 4.
-
-
-
-![]()
-
-### 5.
-
-
-
-### 6.
-
-
-
-![]()
-
-### 7.
-
-
-
-![]()
-
-### 8.
 
 
 
 ### Features Left To Implement
 
-### 1. 
+1. A feedback feature, where users can mark when they have completed the task would be a useful future addition on the site.
 
 
 
-### 2. 
+2. Personalised tasks that can be sent to individual members rather than the whole section or chorus would help with members progress
 
-
-
-
-### 3. 
 
 
 ### Features Changed from Original Wireframe
@@ -123,33 +114,40 @@ The site is responsive across all screen sizes. The layout of the pages change d
 Originally I wanted to have a google calendar linked to the front page of the site where the members of the Belles can see any events that are coming up. Once this was embedded it did not look right for the site
 and it is not possible to change the look of the calendar within the page. The colour scheme did not work with the rest of the site and I therefore made the decision to delete this from the site. 
 
+### 2. Add Task Button
+Originally I had planned to have this on the header, however after user testing, I made the decision to include this on the individual section pages above the existing tasks. This feels like a more intuitive place to have the feature.
+
+### 3. Task Cards
+As my skills evolved throughout the building of the project, I decided to make the task cards only display the song title and due date of the task, with the rest being viewed after clicking the card. This improves the aesthetics of the site by keeping the pages looking cleaner. 
+
+
 ---
 
 ## Frameworks, Libraries & Programmes Used
 
-1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/) 
-    * Bootstrap was used to help with the styling and responsiveness of the site.
-2. [Hover.css:](https://ianlunn.github.io/Hover/) 
-    * Hover.css was used on the links to change the styling, and on the gallery to increase the size of the image on hover.
-3. [Google Fonts:](https://fonts.google.com/) 
-    * Google fonts were used to import the Lato and Dancing Script fonts which are used throughout the site.
-4. [Font Awesome:](https://fontawesome.com/) 
-    * Font Awesome was used for the social media icons on the footer links, and the musical notes on the accordion.
-5. [jQuery:](https://jquery.com/) 
-    * jQuery came with Bootstrap and was used to create a responsive navbar.
-6. [Git:](https://git-scm.com/) 
+1. [Materialize](https://materializecss.com/) 
+    * Materialize was used to help with the styling and responsiveness of the site.
+2. [Google Fonts:](https://fonts.google.com/) 
+    * Google fonts were used to import the Lato and Niconne fonts which are used throughout the site.
+3. [Font Awesome:](https://fontawesome.com/) 
+    * Font Awesome was used for the icons on the footer links, and the musical notes on the task cards, pon the header and on the log in and registration forms.
+4. [jQuery:](https://jquery.com/) 
+    * jQuery was used in conjunction with Materialize across the site.
+5. [Git:](https://git-scm.com/) 
     * Git was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
-7. [GitHub:](https://github.com/) 
+6. [GitHub:](https://github.com/) 
     * GitHub is used to store the project's code after being pushed from Git.
-8. [Balsamiq:](https://balsamiq.com/) 
-    * Balsamiq was used to design the site and create [wireframes](documentation/belles-wireframes.pdf).
-9. [w3schools:](https://www.w3schools.com/)
-    * A w3schools tutorial was used as the basis for the accordion on the What is Barbershop page.
-10. [Paulund](https://paulund.co.uk/css-animation-link-underline)
-    * Sample CSS from paulund.com was used as the basis of the underline on hover on the links in the header. 
-11. Languages used
+7. [Balsamiq:](https://balsamiq.com/) 
+    * Balsamiq was used to design the site and create [wireframes](documentation/images/Homework-Tracker-Wireframe-pdf.pdf).
+8. [Heroku:](https://heroku.com) 
+    * Heroku was used to host the deployed site
+9. [MongoDB](https://www.mongodb.com/)
+    * MongoDB was used for the database for the site
+8. Languages used
     * HTML
     * CSS
+    * Python
+ 
 
 ---
 
@@ -169,19 +167,15 @@ and it is not possible to change the look of the calendar within the page. The c
 
 ### Code
 
-* Code for the accordion was adapted from [w3schools:](https://www.w3schools.com/)
-* The header link underline was adapted from code taken from [Paulund](https://paulund.co.uk/css-animation-link-underline)
+* 
 
 ### Content
 
-* The content for the "About the Belles" and the "Timeline" section were taken from the Belles' own website, 
-[The Belles of Three Spires](www.thebelles.org.uk)
-* All other content is original.
+
 
 ### Acknowledgements
 
 Thanks to 
-* The Belles of Three Spires for granting permission to use their content and images in my project.
-* My mentor Aaron Sinnot for his help
+
 
 ---

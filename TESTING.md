@@ -10,6 +10,8 @@
   
   Form and text boxes made wider for small screens
 
+  ---
+
 * **Issue**
 
     Title in header too big for smaller screen and drops down outside of the header
@@ -18,6 +20,7 @@
 
     Media Queries used to use smaller text as screen size gets smaller
 
+---
 
 *   **Issue**
 
@@ -75,7 +78,7 @@
 
     Created @app.route entry for each section so that the edit button in the modal would route back to the section page. 
 
-## **User testing**
+## **Manual User testing**
 
 ### **Page**
 
@@ -122,15 +125,17 @@
 
 * #### Add_tasks
     * When logged in as music team
-
+        * Add task button is visible at the top of all section pages when logged in as a member of the music team
+        * Section dropdown works and allows a section to be selected
+        * All fields must be completed before the task can be submitted. If a field is missed an error displays on the field
+        * When the cancel button is clicked, the new task is cancelled and the page returns to the View Tasks page
+        * When the Submit button is clicked, the new task is submitted and a flashed message displays "New Task Added Successfully"
+        * Task is added to the database correctly and filters to the correct task page
 
     * When logged in as standard member
-        *
+        * Add task button is not visible when logged in a standard member 
 
  
-
-
-
 * #### Edit_tasks
     * When logged in as music team
         * Edit button only shows when logged in as a member of the music team
@@ -163,42 +168,72 @@
 
 * #### whole_chorus
     * When logged in as music team
+        * All tasks allocated to "Whole Chorus" can be viewed
+        * Card shws the Song title and the due date
+        * Card opens to diplay full task details when clicked
+        * Cross symbol closes the card
+        * Front of card shows the EDIT and DELETE buttons
 
 
     * When logged in as standard member
+        * As above, but EDIT and DELETE buttons are now displayed
 
  
 
 * #### lead.html
     * When logged in as music team
+        * All tasks allocated to "Lead" can be viewed
+        * Card shws the Song title and the due date
+        * Card opens to diplay full task details when clicked
+        * Cross symbol closes the card
+        * Front of card shows the EDIT and DELETE buttons
 
 
     * When logged in as standard member
-
+        * As above, but EDIT and DELETE buttons are now displayed
  
 
 * #### tenor.html
     * When logged in as music team
+        * All tasks allocated to "Tenor" can be viewed
+        * Card shws the Song title and the due date
+        * Card opens to diplay full task details when clicked
+        * Cross symbol closes the card
+        * Front of card shows the EDIT and DELETE buttons
 
 
     * When logged in as standard member
-
+        * As above, but EDIT and DELETE buttons are now displayed
  
 
 * #### bari.html
     * When logged in as music team
-
+        * All tasks allocated to "Bari" can be viewed
+        * Card shws the Song title and the due date
+        * Card opens to diplay full task details when clicked
+        * Cross symbol closes the card
+        * Front of card shows the EDIT and DELETE buttons
 
     * When logged in as standard member
-
+        * As above, but EDIT and DELETE buttons are now displayed
  
 
 * #### bass.html
     * When logged in as music team
+        * All tasks allocated to "Bass" can be viewed
+        * Card shws the Song title and the due date
+        * Card opens to diplay full task details when clicked
+        * Cross symbol closes the card
+        * Front of card shows the EDIT and DELETE buttons
 
 
     * When logged in as standard member
+        * As above, but EDIT and DELETE buttons are now displayed
 
+
+* #### Log Out
+    * Hitting the Log Out Button will log the user out of the site and display a flashed message "You are now logged out of the site"
+    
  
 
 
@@ -208,7 +243,7 @@ The HTML and CSS were tested using W3C Markup Validator and W3C CSS Validator to
 were no syntax errors on any of the pages of the project. 
 
 * [W3C Markup Validator]()
-* [W3C CSS Validator]()
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator)
 
 Each page of HTML and the CSS file were all checked. All results came back as completely clear of errors.
 
@@ -220,7 +255,7 @@ Each page of HTML and the CSS file were all checked. All results came back as co
 
     * CSS
     
-        * []()
+        * [](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/MS3-CSS-Checker.pdf)
 
 
     * Python
@@ -232,18 +267,42 @@ Each page of HTML and the CSS file were all checked. All results came back as co
 * **User Stories** 
     * **As a member of the music team**
         1. I want to be able to set tasks for my section so that they know what part of the tracks we neeed to prioritise next.
+            * The Add Task feature enables the music team to be able to set tasks, which will be filtered into the task page for their section
+        ![](documentation/images/screenshot-1-1.png)
+
         2. I want to be able to see what tasks have been set by other members of the music team for their sections
+            * In being able to see all of the tasks that are being set for the other sections, I am able to keep track of what else is happening throughout the chorus
+        ![](documentation/images/Screenshot-1-2.png)
+
         3. I want to be able to see what tasks have been set for me in the music team tasks section
+            * I can look at tasks that have been set for the music team tasks on the music team page.
+        ![](documentation/images/Screenshot-1-3.png)
+
         4. I want to be able to see what tasks have been set for the whole chorus
+            * I can see the tasks that have been set for the Whole Chorus, meaning that I can keep track of what else my section, and I, need to be doing and for when
+            ![](documentation/images/Screenshot-1-4.png)
 
     * **As a Non-music team member of the chorus**
         1. I want to be able to see what tasks my section lead has set for me
+            * I can go to my section page and see what tasks have been set for me by my section lead
+            ![](documentation/images/Screenshot-2-1.png)
+
         2. I want to be able to see what tasks have been set for the whole chorus
+            * The Whole Chorus tasks enables me to be able to keep track of the tasks that have been set for the whole chorus
+            ![](documentation/images/Screenshot-2-2.png)
     
     * **As the director of the chorus**
         1. I want to be able to set tasks for the individual sections to be able to tell them which specific parts of the tracks they need to work on
+            * I can go into each individual section and see what tasks have been set for the section by other members of the music team and set any extra tasks that are needed
+            ![](documentation/images/Screenshot-3-1.png)
+
         2. I want to be able to communicate tasks and messages to the whole chorus 
-        3. I want to be able to set taks for the music team to tell them what we need to be working on next.
+            * I can keep the whole chorus informed of any tasks that I need them to undertake
+            ![](documentation/images/Screenshot-3-2.png)
+
+        3. I want to be able to set tasks for the music team to tell them what we need to be working on next.
+            * I can set tasks for the music team to help them know what we need to be working on next.
+            ![](documentation/images/Screenshot-3-3.png)
 
 ### Further Testing
 
