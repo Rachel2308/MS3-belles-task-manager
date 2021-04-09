@@ -1,226 +1,215 @@
 body {
-    background-color: #fbf7f5;
-    font-family: 'Lato', sans-serif;
+	background-color: #fbf7f5;
+	font-family: 'Lato', sans-serif;
 }
 
 .text-shadow {
-    text-shadow: 3px 3px 3px rgba(33, 33, 33, 0.7)
+	text-shadow: 3px 3px 3px rgba(33, 33, 33, 0.7)
 }
 
 .brand-logo {
-    font-family: "niconne", cursive;
-    margin-left: 15px;
-    
+	font-family: "niconne", cursive;
+	margin-left: 15px;
 }
 
 .sidenav {
-    background-color: #f7edf7;
+	background-color: #f7edf7;
 }
 
 header a:hover {
-    color: #ff80ab;
+	color: #ff80ab;
 }
 
 .page-title {
-    color: #616161;
-    margin-top: 50px;
-    margin-bottom: 50px;
+	color: #616161;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 
 /* Registration and Log in Form */
 
 .registration-form {
-    border-radius: 10px;
-    background-color: #fff8ff;
-    
+	border-radius: 10px;
+	background-color: #fff8ff;
+}
+
+.reg-fields {
+	margin-top: 1px;
 }
 
 .input-field {
-    max-width: 90%;
+	max-width: 90%;
+	margin-bottom: 5px;
 }
 
 .form-button {
-    border-radius: 10px;
+	border-radius: 10px;
 }
 
 .form-button:hover {
-    color: #424242;
-    transform: scale(1.1);
-    
+	color: #424242;
+	transform: scale(1.1);
 }
 
 .registration-bottom-link {
-    background-color: #fff8ff;
-    border-radius: 10px;
-    margin-top: 50px;
-    text-align: center;
-    color: #424242;
+	background-color: #fff8ff;
+	border-radius: 10px;
+	margin-top: 50px;
+	text-align: center;
+	color: #424242;
 }
 
-.registration-bottom-link a{
-    color: #e62e6c;
+.registration-bottom-link a {
+	color: #e62e6c;
 }
 
 .registration-bottom-link a:hover {
 	color: #4d4455;
-	
 }
 
 .registration-form {
-    border-color: #4d4455;
-    background-color: white;
-    border-radius: 20px;
-    border-width: 1px;
-    border-style:solid;
+	border-color: #4d4455;
+	background-color: white;
+	border-radius: 20px;
+	border-width: 1px;
+	border-style: solid;
 }
-
 
 
 /* Homework Front Page */
 
 .section-link {
-    border-radius: 10px;
-    text-align: center !important;
-    color: white;
+	border-radius: 10px;
+	text-align: center !important;
+	color: white;
 }
 
 .section-link:hover {
-    transform: scale(1.1);
-    color: black !important;
-    
+	transform: scale(1.1);
+	color: black !important;
 }
-
 
 
 /* Flashes */
 
 .flashes h4 {
-    line-height: 2;
+	line-height: 2;
 }
 
 
 /* Section task pages */
 
 .add-task-button {
-    margin-top: 30px;
+	margin-top: 30px;
 }
 
 .card {
-    margin-top: 30px;  
+	margin-top: 30px;
 }
 
 .card-title {
-    height: 300px;
+	height: 300px;
 }
 
 .card-links {
-    margin-top: 80px;
+	margin-top: 80px;
+	text-align: justified;
 }
 
 .task-title {
-    font-size: 20px !important;
+	font-size: 20px !important;
 }
 
 .task-description {
-    font-size: 15px !important;
+	font-size: 15px !important;
 }
 
 .task-set-by {
-    font-size:12px !important;
+	font-size: 12px !important;
 }
 
 .btn-small {
-    position: relative;
-    margin-top: 100px;
-    color: #616161;
-    
+	position: relative;
+	margin-top: 100px;
+	color: #616161;
 }
 
 .delete-button {
-    background-color: #d50000;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    padding-top: 3px;
-    border-radius: 10px;
-    margin-bottom: 20px !important;
+	background-color: #d50000;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-top: 3px;
+	border-radius: 10px;
 }
 
 .edit-button {
-    background-color: #FFFFFF;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    padding-top: 3px;
-    border-radius: 10px;
-    margin-bottom: 20px !important;
+	background-color: #FFFFFF;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-top: 3px;
+	border-radius: 10px;
 }
 
 .edit-button:hover {
-    color: #ff80ab !important;
+	color: #ff80ab !important;
 }
 
 .delete-button:hover {
-    color: black !important;
+	color: black !important;
 }
 
 .modal {
-    border-radius: 10px;
+	border-radius: 10px;
 }
-
 
 .modal-content {
-    color: #616161;
-    }
+	color: #616161;
+}
 
 modal-close {
-    border-radius: 10px;
-    position: relative;
-    margin-top: 100px;
+	border-radius: 10px;
+	position: relative;
+	margin-top: 100px;
 }
+
 
 /* Add task form */
 
 .add-tasks-form {
-    border-color: #4d4455;
-    background-color: white;
-    border-radius: 20px;
-    border-width: 1px;
-    border-style:solid;
+	border-color: #4d4455;
+	background-color: white;
+	border-radius: 20px;
+	border-width: 1px;
+	border-style: solid;
 }
-
 
 
 /* Media Queries */
 
 @media screen and (max-width: 1393px) {
-    .card-content {
-    font-size: 20px !important;
-}
-	
+	.card-content {
+		font-size: 20px !important;
+	}
 }
 
 @media screen and (max-width: 992px) {
-    .card-content {
-    font-size: 20px !important;
-}
-	
+	.card-content {
+		font-size: 20px !important;
+	}
 }
 
 @media screen and (max-width: 768px) {
-    .brand-logo {
-        width: 80% !important;
-        text-align: center;
-    }
-}	
+	.brand-logo {
+		width: 80% !important;
+		text-align: center;
+	}
+}
 
 @media screen and (max-width: 576px) {
-    .brand-logo {
-        
-        font-size: 23px !important;
-        
-    }
-    
-} 
-
+	.brand-logo {
+		font-size: 23px !important;
+	}
+}

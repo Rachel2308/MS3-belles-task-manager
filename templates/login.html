@@ -1,47 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-
 <h3 class="center-align page-title">Log In</h3>
-
 <div class="row">
-    <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for ('login') }}">
-        <div class="card-panel registration-form">
-            <!-- Enter Name -->
-            <div class="row">
-                <div class="input-field registration-form col s10 offset-s1">
-                    <i class="fas fa-user prefix pink-text text-accent-1 text-shadow"></i>
-                    <input id="username" name="username" type="text" minlength="4" maxlength="15" 
-                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" 
-                        placeholder="Enter Username" required>
-                    
-                </div>
+   <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for ('login') }}">
+      <div class="card-panel registration-form">
+         <!-- Enter Name -->
+         <div class="row">
+            <div class="input-field registration-form col s10 offset-s1">
+               <i class="fas fa-user prefix pink-text text-accent-1 text-shadow"></i>
+               <input id="username" name="username" type="text" minlength="4" maxlength="15" 
+                  pattern="^[a-zA-Z0-9]{5,15}$" class="validate" 
+                  placeholder="Enter Username" required>
             </div>
-
-            <!-- Enter Password -->
-            <div class="row">
-                <div class="input-field registration-form col s10 offset-s1">
-                    <i class="fas fa-lock prefix pink-text text-accent-1 text-shadow"></i>
-                    <input id="password" name="password" type="password" minlength="5" maxlength="15" 
-                        pattern="^[a-zA-Z0-9]{5,}$" class="validate" placeholder="Enter Password" required>
-                    
-                </div>
+         </div>
+         <!-- Enter Password -->
+         <div class="row">
+            <div class="input-field registration-form col s10 offset-s1">
+               <i class="fas fa-lock prefix pink-text text-accent-1 text-shadow"></i>
+               <input id="password" name="password" type="password" minlength="5" maxlength="15" 
+                  pattern="^[a-zA-Z0-9]{5,}$" class="validate" placeholder="Enter Password" required>
             </div>
-
-            <!--Log In Button-->
-            <div class="row">
-                <button type="submit" class="col s6 offset-s3 btn-large pink accent-1 form-button submit-button">Log in</button>
-            </div>
-        </div>
-    </form>
-</div>
-
- <div class="row">
-      <div class="card-panel col s6 offset-s3 m4 offset-m4 lg2 offset-lg5 registration-bottom-link">
-        <p>Need to register? Please <a href="{{ url_for('register') }}">click here</a></p>
-        
+         </div>
+         <!--Log In Button-->
+         <div class="row">
+            <button type="submit" class="col s6 offset-s3 btn-large pink accent-1 form-button submit-button">Log in</button>
+         </div>
       </div>
-    </div>
-  
-
-
+   </form>
+</div>
+<div class="row">
+   <div class="card-panel col s6 offset-s3 m4 offset-m4 lg2 offset-lg5 registration-bottom-link">
+      <p>Need to register? Please <a href="{{ url_for('register') }}">click here</a></p>
+   </div>
+</div>
 {% endblock %}

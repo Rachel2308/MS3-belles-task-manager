@@ -1,93 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-        crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <link rel="icon" type="image/png" href="static/image/belles-favicon.PNG" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Niconne&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
-      integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg=="
-      crossorigin="anonymous" />
-    {% block styles %}
-    {% endblock %}
-    <title>Belles' Task Manager</title>
-</head>
-
-<body>
-
-    <header>
-        <!-- top navbar-->
-        <nav class="nav-extended grey darken-2">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+         crossorigin="anonymous" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+         type="text/css">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+      <link rel="icon" type="image/png" href="static/image/belles-favicon.PNG" />
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Niconne&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+         integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg=="
+         crossorigin="anonymous" />
+      {% block styles %}
+      {% endblock %}
+      <title>Belles' Task Manager</title>
+   </head>
+   <body>
+      <header>
+         <!-- top navbar-->
+         <nav class="nav-extended grey darken-2">
             <div class="nav-wrapper">
-                {% if session.user %}
-                <a href="{{ url_for('homework') }}" class="brand-logo pink-text text-accent-1 text-shadow">Belles' Homework Manager</a>
-                {% else %}
-                <a href="{{ url_for('login') }}" class="brand-logo pink-text text-accent-1 text-shadow">Belles' Homework Manager</a>
-                {% endif %}
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    
-                    {% if session.user %}
-                        <li><a href="{{ url_for('homework') }}" class="text-shadow"><i class="fas fa-list"></i>  View Tasks</a></li>
-                        <li><a href="{{ url_for('logout') }}" class="text-shadow"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
-                    {% else %}  
-                        <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>  Register</a></li>
-                        <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> Log In</a></li>                                  
-                    {% endif %}                  
-                </ul>
+               {% if session.user %}
+               <a href="{{ url_for('homework') }}" class="brand-logo pink-text text-accent-1 text-shadow">Belles' Homework Manager</a>
+               {% else %}
+               <a href="{{ url_for('login') }}" class="brand-logo pink-text text-accent-1 text-shadow">Belles' Homework Manager</a>
+               {% endif %}
+               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+               <ul class="right hide-on-med-and-down">
+                  {% if session.user %}
+                  <li><a href="{{ url_for('homework') }}" class="text-shadow"><i class="fas fa-list"></i>  View Tasks</a></li>
+                  <li><a href="{{ url_for('logout') }}" class="text-shadow"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
+                  {% else %}  
+                  <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>  Register</a></li>
+                  <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> Log In</a></li>
+                  {% endif %}                  
+               </ul>
             </div>
-        </nav>
-
-        <!-- mobile navbar -->
-        <ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align pink-text text-accent-2">Belles' Homework Manager</h4></li>
-            
+         </nav>
+         <!-- mobile navbar -->
+         <ul class="sidenav" id="mobile-demo">
+            <li>
+               <h4 class="center-align pink-text text-accent-2">Belles' Homework Manager</h4>
+            </li>
             {% if session.user %}                    
-                    <li><a href="{{ url_for('homework') }}"><i class="fas fa-list"></i>  View Tasks</a></li>
-                    <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
-                {% else %}
-                    <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>  Register</a></li>
-                    <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i>Log In</a></li>
-                {% endif %}
-        </ul>
-
-        
-
-    </header>
-
-    <section>
-        <!-- Flash Messages -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="pink accent-1 center-align">{{ message }}</h4>
-                    </div>
-                {% endfor %}
+            <li><a href="{{ url_for('homework') }}"><i class="fas fa-list"></i>  View Tasks</a></li>
+            <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>  Log Out</a></li>
+            {% else %}
+            <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>  Register</a></li>
+            <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i>Log In</a></li>
             {% endif %}
-        {% endwith %}
-
-    </section>
-
-    <main class="container">
-    {% block content %}
-    {% endblock %}
-    </main>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
-</body>
-
+         </ul>
+      </header>
+      <section>
+         <!-- Flash Messages -->
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+         {% for message in messages %}
+         <div class="row flashes">
+            <h4 class="pink accent-1 center-align">{{ message }}</h4>
+         </div>
+         {% endfor %}
+         {% endif %}
+         {% endwith %}
+      </section>
+      <main class="container">
+         {% block content %}
+         {% endblock %}
+      </main>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      {% block scripts %}
+      {% endblock %}
+   </body>
 </html>

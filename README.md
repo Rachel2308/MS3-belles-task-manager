@@ -3,9 +3,9 @@
 
 [View the live project](http://belles-task-manager.herokuapp.com/login)
 
-![The Belles of Three Spires Site Homework Tracker]()
+![The Belles of Three Spires Site Homework Tracker](documentation/images/front-page-screenshot.png)
 
-This website was designed to create a homework tracker for the Belles of Three Spires Barbershop Chorus. It will enable the Belles' music team to be able to set homework for the rest of the chorus, All other members of the choris will be able to see which part of which song they should be prioritising.
+This website was designed to create a homework tracker for the Belles of Three Spires Barbershop Chorus. It will enable the Belles' music team to be able to set homework for the rest of the chorus, All other members of the chorus will be able to see which part of which song they should be prioritising.
 
 ![Am I responsive](documentation/images/MS3-am-I-responsive.png)
 
@@ -58,7 +58,7 @@ The wireframes for the site were created in balsamiq and uploaded as a pdf. They
 
 ### Users
 
-There are 2 levels of user for the site, this is selected on the registration form by checking the "Music Team" button. This will tage the user as either being a member of the music team, or a standard member. Only a member of the music team can add tasks, or edit and delete existing tasks.
+There are 2 levels of user for the site, this is selected on the registration form by checking the "Music Team" button. This will tag the user as either being a member of the music team, or a standard member. Only a member of the music team can add tasks, or edit and delete existing tasks.
 
 ### Existing Features
 

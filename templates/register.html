@@ -4,70 +4,61 @@
 <h3 class="center-align page-title">Register New User</h3>
 
 <div class="row">
-    <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for ('register') }}">
-        <div class="card-panel registration-form">
-
-            <div class="row">
-				<div class="input-field col s6 offset-s3">
-					<div class="switch center-align">                        
-						<label for="is_musicteam">
-                            <input type="checkbox" id="is_musicteam" name="is_musicteam">
-                            <span class="lever"></span>
-                            <p>Are you a member of the music team?<p>
-                        </label>
-					</div>
-				</div>
-			</div>
-            <!-- Enter Username -->
-            <div class="row">
-                <div class="input-field registration-form col s10 offset-s1">
-                    <i class="fas fa-user prefix pink-text text-accent-1 text-shadow"></i>
-                    <input id="username" name="username" type="text" minlength="4" maxlength="15" 
-                        pattern="^[a-zA-Z]{5,15}$" class="validate" 
-                        placeholder="Enter Username" required>
-                    
-                </div>
-                
+   <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for ('register') }}">
+      <div class="card-panel registration-form">
+         <div class="row">
+            <div class="input-field col s6 offset-s3">
+               <div class="switch center-align">
+                  <div>Are you a member of the music team?</div>
+                  <label for="is_musicteam">
+                  <input type="checkbox" id="is_musicteam" name="is_musicteam">
+                  <span class="lever"></span>
+                  </label>
+               </div>
             </div>
-            <p></p>
+         </div>
 
-            <!-- Enter Password -->
-            <div class="row">
-                <div class="input-field registration-form col s10 offset-s1">
-                    <i class="fas fa-lock prefix pink-text text-accent-1 text-shadow"></i>
-                    <input id="password" name="password" type="password" minlength="5" maxlength="15" 
-                        pattern="^[a-zA-Z0-9]{5,}$" class="validate" placeholder="Enter Password (minimum 5 characters)" required>
-                    
-                    
-                </div>
+         <!-- Enter Username -->
+         <div class="row">
+            <div class="input-field registration-form col s10 offset-s1">
+               <i class="fas fa-user prefix pink-text text-accent-1 text-shadow"></i>
+               <input id="username" name="username" type="text" minlength="4" maxlength="15" 
+                  pattern="^[a-zA-Z]{5,15}$" class="validate" 
+                  placeholder="Username" required >
             </div>
-            
+         </div>
+         <p class="center-align reg-fields">Enter username, please use your first name followed by your initial</p>
 
-            <!-- Confirm Password -->
-            <div class="row">
-                <div class="input-field registration-form col s10 offset-s1">
-                    <i class="fas fa-lock prefix pink-text text-accent-1 text-shadow"></i>
-                    <input id="confirm-password" name="confirm-password" type="password" minlength="5" maxlength="15" 
-                        pattern="^[a-zA-Z0-9]{5,}$" class="validate" placeholder="Confirm Password" required>
-                    
-                </div>
+         <!-- Enter Password -->
+         <div class="row">
+            <div class="input-field registration-form col s10 offset-s1">
+               <i class="fas fa-lock prefix pink-text text-accent-1 text-shadow"></i>
+               <input id="password" name="password" type="password" minlength="5" maxlength="15" 
+                  pattern="^[a-zA-Z0-9]{5,}$" class="validate" placeholder="Password" required>
             </div>
+         </div>
+         <p class="center-align reg-fields">Only letters and numbers, minimum of 5 letters</p>
 
-            <!--Register User Button-->
-            <div class="row">
-                <button type="submit" class="col s6 offset-s3 btn-large form-button pink accent-1 submit-button">Register</button>
+         <!-- Confirm Password -->
+         <div class="row">
+            <div class="input-field registration-form col s10 offset-s1">
+               <i class="fas fa-lock prefix pink-text text-accent-1 text-shadow"></i>
+               <input id="confirm-password" name="confirm-password" type="password" minlength="5" maxlength="15" 
+                  pattern="^[a-zA-Z0-9]{5,}$" class="validate" placeholder="Confirm Password" required>
             </div>
-        </div>
-    </form>
+         </div>
+
+         <!--Register User Button-->
+         <div class="row">
+            <button type="submit" class="col s6 offset-s3 btn-large form-button pink accent-1 submit-button">Register</button>
+         </div>
+      </div>
+   </form>
 </div>
 
- <div class="row">
-      <div class="card-panel col s6 offset-s3 m4 offset-m4 lg2 offset-lg5 registration-bottom-link">
-        <p>Already registered? Please <a href="{{ url_for('login') }}">Log In</a></p>
-        
-      </div>
-    </div>
-  
-
-
+<div class="row">
+   <div class="card-panel col s6 offset-s3 m4 offset-m4 lg2 offset-lg5 registration-bottom-link">
+      <p>Already registered? Please <a href="{{ url_for('login') }}">Log In</a></p>
+   </div>
+</div>
 {% endblock %}

@@ -240,27 +240,45 @@
  ## Testing
 
 The HTML and CSS were tested using W3C Markup Validator and W3C CSS Validator to ensure that there 
-were no syntax errors on any of the pages of the project. 
+were no syntax errors on any of the pages of the project. The python was checked against Git pod's internal PEP8 checker, and double checked using PEP8 Online.
 
 * [W3C Markup Validator]()
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator)
+* [PEP8 Checker](http://pep8online.com/)
 
 Each page of HTML and the CSS file were all checked. All results came back as completely clear of errors.
 
 * Results
     * HTML
-        * []()
+        * [add_tasks](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-add_task.pdf)
+
+        * [bari](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-bari.pdf)
+
+        * [bass](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-bass.pdf)
+
+        * [edit_tasks](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-edit_task.pdf)
+
+        * [homework](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-homework.pdf)
+
+        * [leads](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-lead.pdf)
+
+        * [login](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-login.pdf)
+
+        * [musicteam](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-musicteam_tasks.pdf)
+
+        * [register](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-regsister.pdf)
+
+        * [tenor](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-tenor.pdf)
+
+        * [wholechorus](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-wholechorus.pdf)
     
         
 
-    * CSS
-    
-        * [](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/MS3-CSS-Checker.pdf)
+      
+    * [CSS](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/MS3-CSS-Checker.pdf)
 
 
-    * Python
-
-        * []()
+    * [Python](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/pep8-check.pdf)
 
 ### Testing User Stories from User Experience (UX) Section
 
@@ -272,37 +290,37 @@ Each page of HTML and the CSS file were all checked. All results came back as co
 
         2. I want to be able to see what tasks have been set by other members of the music team for their sections
             * In being able to see all of the tasks that are being set for the other sections, I am able to keep track of what else is happening throughout the chorus
-        ![](documentation/images/Screenshot-1-2.png)
+        ![](documentation/images/screenshot-1-2.png)
 
         3. I want to be able to see what tasks have been set for me in the music team tasks section
             * I can look at tasks that have been set for the music team tasks on the music team page.
-        ![](documentation/images/Screenshot-1-3.png)
+        ![](documentation/images/screenshot-1-3.png)
 
         4. I want to be able to see what tasks have been set for the whole chorus
             * I can see the tasks that have been set for the Whole Chorus, meaning that I can keep track of what else my section, and I, need to be doing and for when
-            ![](documentation/images/Screenshot-1-4.png)
+            ![](documentation/images/screenshot-1-4.png)
 
     * **As a Non-music team member of the chorus**
         1. I want to be able to see what tasks my section lead has set for me
             * I can go to my section page and see what tasks have been set for me by my section lead
-            ![](documentation/images/Screenshot-2-1.png)
+            ![](documentation/images/screenshot-2-1.png)
 
         2. I want to be able to see what tasks have been set for the whole chorus
             * The Whole Chorus tasks enables me to be able to keep track of the tasks that have been set for the whole chorus
-            ![](documentation/images/Screenshot-2-2.png)
+            ![](documentation/images/screenshot-2-2.png)
     
     * **As the director of the chorus**
         1. I want to be able to set tasks for the individual sections to be able to tell them which specific parts of the tracks they need to work on
             * I can go into each individual section and see what tasks have been set for the section by other members of the music team and set any extra tasks that are needed
-            ![](documentation/images/Screenshot-3-1.png)
+            ![](documentation/images/screenshot-3-1.png)
 
         2. I want to be able to communicate tasks and messages to the whole chorus 
             * I can keep the whole chorus informed of any tasks that I need them to undertake
-            ![](documentation/images/Screenshot-3-2.png)
+            ![](documentation/images/screenshot-3-2.png)
 
         3. I want to be able to set tasks for the music team to tell them what we need to be working on next.
             * I can set tasks for the music team to help them know what we need to be working on next.
-            ![](documentation/images/Screenshot-3-3.png)
+            ![](documentation/images/screenshot-3-3.png)
 
 ### Further Testing
 
