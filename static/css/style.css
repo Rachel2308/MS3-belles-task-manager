@@ -153,13 +153,11 @@ header a:hover {
 	border-radius: 10px;
 }
 
-.edit-button:hover {
-	color: #ff80ab !important;
-}
-
-.delete-button:hover {
+.task-button:hover {
 	color: black !important;
 }
+
+
 
 .modal {
 	border-radius: 10px;
