@@ -151,6 +151,7 @@ As my skills evolved throughout the building of the project, I decided to make t
     * HTML
     * CSS
     * Python
+    * Javascript
  
 
 ---
@@ -159,13 +160,17 @@ As my skills evolved throughout the building of the project, I decided to make t
 
 ## Deployment
 
-### Heroku
-
-** **
+The Belles' Homework Manager was created on Gitpod. Commits to git pushed the project to the GitHub repository. The project was deployed to Heroku for the live site
+and the pushes to GitHub automatically pushed to Heroku to update the live site. 
 
 **Running Belles Task Manager Online Locally**
 
-How to clone Locate a Loo from GitHub
+### **GitHub**
+
+How to clone Belles' Task Manager from GitHub
+
+Please note that this project will only run locally if am env.py file is set up containing the IP, PORT, SECRET_KEY, MONGO-URI and MONGO_DBNAME. 
+For security reasons these details will not be shared on this documentation. The env.py file should be added to your gitignore file.
 
 1. Navigate to rachel2308/MS3-belles-task-manager
 2. Click on the green Code button
@@ -176,21 +181,57 @@ How to clone Locate a Loo from GitHub
 
 https://github.com/Rachel2308/MS3-belles-task-manager
 
+### **Heroku**
+
+**Deployment to Heroku**
+
+**Create the application:**
+
+    * Login in to heroku.com
+    * Click on New, and Create new app
+    * Enter your app name
+    * Select the region that is closest to you
+
+**Connect to you GitHub repository**
+
+    * Click Deploy and select GitHub - Connect to GitHub
+    * Enter your repository name and search
+    * Click Connect on the correct repository
+
+**Set Your Environment Variables**
+
+Go to settings, and within Config Vars enter the following
+
+    * IP: 0.0.0.0
+    * PORT: 5000
+    * MONGO_DBNAME: (enter the database name that you are connecting to)
+    * MONGO_URI: (enter your mongo uri. This is found by going to clusters> connect> connect to your application and entering your passwords and dbname within the link)
+    * SECRET_KEY: (This is a secret password that must be very secure.)
+
+**Enable Automatic Deploys**
+
+    * Go to the deploy tab
+    * Within the automatic deploys section, choose the branch that you want to deploy from and select Enable Automatic Deploys. 
+
+
 ---
 
 ## Credits
 
 ### Code
 
-* 
-
-### Content
+* The code that formed the basis of the project is based on the code from the Task Manager App Walkthrough project on the LMS. 
+* Code for the forms, modal and navbars were adapted from the materialize framework.
 
 
 
 ### Acknowledgements
 
 Thanks to 
+
+* My mentor Aaron Sinnot for his guidance
+* All the tutors, but especially Scott for his unending support, while somehow still maintaining the patience of a saint!
+* The Slack community, in particular Ed B_Lead. His support, both emotional and with the coding has been a huge help in enabling me to get through this project relatively unscathed.
 
 
 ---

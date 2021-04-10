@@ -173,7 +173,7 @@
 * #### whole_chorus
     * When logged in as music team
         * All tasks allocated to "Whole Chorus" can be viewed
-        * Card shws the Song title and the due date
+        * Card shows the Song title and the due date
         * Card opens to diplay full task details when clicked
         * Cross symbol closes the card
         * Front of card shows the EDIT and DELETE buttons
