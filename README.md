@@ -27,6 +27,10 @@ This website was designed to create a homework tracker for the Belles of Three S
         2. I want to be able to communicate tasks and messages to the whole chorus 
         3. I want to be able to set taks for the music team to tell them what we need to be working on next.
 
+## Testing
+
+[View the full TESTING.md documentation](TESTING.md)
+
 ## Design
 
 ### Colour Scheme

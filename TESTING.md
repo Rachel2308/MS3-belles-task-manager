@@ -127,7 +127,11 @@
     * When logged in as music team
         * Add task button is visible at the top of all section pages when logged in as a member of the music team
         * Section dropdown works and allows a section to be selected
-        * All fields must be completed before the task can be submitted. If a field is missed an error displays on the field
+        * New tasks cannot be submitted if a section has not been selected from the dropdown menu
+        * If nothing is entered into the due date field, an error is shown by a red underline and the new task cannot be submitted.
+        * If nothing is entered into the song name field, an error is shown by a red underline and the new task cannot be submitted.
+        * If nothing is entered into the task name field, an error is shown by a red underline and the new task cannot be submitted.
+        * If nothing is entered into the task description field, an error is shown by a red underline and the new task cannot be submitted.
         * When the cancel button is clicked, the new task is cancelled and the page returns to the View Tasks page
         * When the Submit button is clicked, the new task is submitted and a flashed message displays "New Task Added Successfully"
         * Task is added to the database correctly and filters to the correct task page
@@ -234,10 +238,7 @@
 * #### Log Out
     * Hitting the Log Out Button will log the user out of the site and display a flashed message "You are now logged out of the site"
     
- 
-
-
- ## Testing
+ ## Code Validator
 
 The HTML and CSS were tested using W3C Markup Validator and W3C CSS Validator to ensure that there 
 were no syntax errors on any of the pages of the project. The python was checked against Git pod's internal PEP8 checker, and double checked using PEP8 Online.

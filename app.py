@@ -21,6 +21,10 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Function for logging in existing users. New users can follow
+    the link to register a new account from here.
+    """
     if request.method == "POST":
         # check username exists
         existing_user = mongo.db.users.find_one(
@@ -49,6 +53,9 @@ def login():
 
 @app.route("/logout")
 def logout():
+    """
+    Function to allow users to logout of the site.
+    """
     flash("You are now logged out of the site")
     session.pop("user")
     return redirect(url_for("login"))
@@ -56,12 +63,22 @@ def logout():
 
 @app.route("/homework")
 def homework():
+    """
+    Function for loading the home page. 6 cards on this page will link
+    to the individual section pages where the sections can see the tasks
+    that have been allocated to them.
+    """
     if 'user' in session:
         return render_template("homework.html", homework=homework)
 
 
 @app.route("/lead_tasks")
 def lead_tasks():
+    """
+    Function for showing members of the lead section the tasks that have
+    been allocated to their section. Music Team members can also add, edit
+    and delete tasks from this page.
+    """
     if 'user' in session:
         homework = mongo.db.homework.find()
         user = mongo.db.users.find_one({"username": session['user']})
@@ -70,6 +87,11 @@ def lead_tasks():
 
 @app.route("/musicteam_tasks")
 def musicteam_tasks():
+    """
+    Function for showing members of the music team the tasks that have
+    been allocated to their section. Music Team members can also add, edit
+    and delete tasks from this page.
+    """
     if 'user' in session:
         homework = mongo.db.homework.find()
         user = mongo.db.users.find_one({"username": session['user']})
@@ -78,6 +100,11 @@ def musicteam_tasks():
 
 @app.route("/wholechorus_tasks")
 def wholechorus_tasks():
+    """
+    Function for showing members the tasks that have been set for the whole
+    chorus. Music Team members can also add, edit and delete tasks from
+    this page.
+    """
     if 'user' in session:
         homework = mongo.db.homework.find()
         user = mongo.db.users.find_one({"username": session['user']})
@@ -87,6 +114,11 @@ def wholechorus_tasks():
 
 @app.route("/tenor_tasks")
 def tenor_tasks():
+    """
+    Function for showing members of the tenor section the tasks that have
+    been allocated to their section. Music Team members can also add, edit
+    and delete tasks from this page.
+    """
     if 'user' in session:
         homework = mongo.db.homework.find()
         user = mongo.db.users.find_one({"username": session['user']})
@@ -95,6 +127,11 @@ def tenor_tasks():
 
 @app.route("/bari_tasks")
 def bari_tasks():
+    """
+    Function for showing members of the bari section the tasks that have
+    been allocated to their section. Music Team members can also add, edit
+    and delete tasks from this page.
+    """
     if 'user' in session:
         homework = mongo.db.homework.find()
         user = mongo.db.users.find_one({"username": session['user']})
@@ -103,6 +140,11 @@ def bari_tasks():
 
 @app.route("/bass_tasks")
 def bass_tasks():
+    """
+    Function for showing members of the bass section the tasks that have
+    been allocated to their section. Music Team members can also add, edit
+    and delete tasks from this page.
+    """
     if 'user' in session:
         homework = mongo.db.homework.find()
         user = mongo.db.users.find_one({"username": session['user']})
@@ -111,6 +153,11 @@ def bass_tasks():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Function for allowing new members to register on the site. Also checks if
+    the username is already registered on the site. Existing members can also
+    follow the link to log in from this page.
+    """
     if request.method == "POST":
         is_musicteam = "on" if request.form.get("is_musicteam") else "off"
         existing_user = mongo.db.users.find_one(
@@ -145,6 +192,10 @@ def register():
 
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
+    """
+    Members of the music team can add tasks for their section from this page.
+    The drop down menu allows the correct section to be selected for the task.
+    """
     user = mongo.db.users.find_one({"username": session['user']})
     if request.method == "POST":
         task = {
@@ -165,6 +216,10 @@ def add_task():
 
 @app.route("/edit_task/<homework_id>", methods=["GET", "POST"])
 def edit_task(homework_id):
+    """
+    Function that enables members of the music team to edit any tasks that need
+    to be changed.
+    """
     if request.method == "POST":
         submit = {
             "section_name": request.form.get("section_name"),
@@ -186,6 +241,10 @@ def edit_task(homework_id):
 
 @app.route("/delete_task_bass/<homework_id>")
 def delete_task_bass(homework_id):
+    """
+    Function that enables bass section tasks to be deleted by members of the
+    music team. Once deleted they will be routed back to the bass section page.
+    """
     mongo.db.homework.remove({"_id": ObjectId(homework_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("bass_tasks"))
@@ -193,6 +252,10 @@ def delete_task_bass(homework_id):
 
 @app.route("/delete_task_bari/<homework_id>")
 def delete_task_bari(homework_id):
+    """
+    Function that enables bari section tasks to be deleted by members of the
+    music team. Once deleted they will be routed back to the bari section page.
+    """
     mongo.db.homework.remove({"_id": ObjectId(homework_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("bari_tasks"))
@@ -200,6 +263,10 @@ def delete_task_bari(homework_id):
 
 @app.route("/delete_task_lead/<homework_id>")
 def delete_task_lead(homework_id):
+    """
+    Function that enables lead section tasks to be deleted by members of the
+    music team. Once deleted they will be routed back to the lead section page.
+    """
     mongo.db.homework.remove({"_id": ObjectId(homework_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("lead_tasks"))
@@ -207,6 +274,11 @@ def delete_task_lead(homework_id):
 
 @app.route("/delete_task_tenor/<homework_id>")
 def delete_task_tenor(homework_id):
+    """
+    Function that enables tenor section tasks to be deleted by members of the
+    music team. Once deleted they will be routed back to the tenor section
+    page.
+    """
     mongo.db.homework.remove({"_id": ObjectId(homework_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("tenor_tasks"))
@@ -214,6 +286,11 @@ def delete_task_tenor(homework_id):
 
 @app.route("/delete_task_musicteam/<homework_id>")
 def delete_task_musicteam(homework_id):
+    """
+    Function that enables music team tasks to be deleted by members of the
+    music team. Once deleted they will be routed back to the music team section
+    page.
+    """
     mongo.db.homework.remove({"_id": ObjectId(homework_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("musicteam_tasks"))
@@ -221,9 +298,59 @@ def delete_task_musicteam(homework_id):
 
 @app.route("/delete_task_wholechorus/<homework_id>")
 def delete_task_wholechorus(homework_id):
+    """
+    Function that enables tasks that have been set for the whole chorus to be
+    deleted by members of the music team. Once deleted they will be routed
+    back to the whole chorus page.
+    """
     mongo.db.homework.remove({"_id": ObjectId(homework_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("wholechorus_tasks"))
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    """
+    Renders a custom 404 error page with a link
+    to take the user back to homework.html
+    """
+    return render_template('404.html', error=error), 404
+
+
+@app.errorhandler(400)
+def server_error(error):
+    """
+    Renders a custom 400 error page with a link
+    to take the user back to homework.html
+    """
+    return render_template('400.html', error=error), 400
+
+
+@app.errorhandler(401)
+def bad_request(error):
+    """
+    Renders a custom 401 error page with a link
+    to take the user back to homework.html
+    """
+    return render_template('401.html', error=error), 401
+
+
+@app.errorhandler(405)
+def method_not_allowed(error):
+    """
+    Renders a custom 405 error page with a link
+    to take the user back to homework.html
+    """
+    return render_template('405.html', error=error), 405
+
+
+@app.errorhandler(500)
+def server_error(error):
+    """
+    Renders a custom 500 error page with a link
+    to take the user back to homework.html
+    """
+    return render_template('500.html', error=error), 500
 
 
 if __name__ == "__main__":

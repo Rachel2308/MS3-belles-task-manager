@@ -28,10 +28,8 @@
             {% if user.is_musicteam == "on" %}
             <!-- Modal Trigger -->
             <div class="card-action card-links center-align">
-               <a href="{{ url_for('edit_task', homework_id=homework._id) }}" class = "grey-text text-darken-4 edit-button">Edit</a>
-            </div>
-            <div>
-               <a href="#{{ homework._id }}" class ="modal-trigger white-text delete-button">Delete</a>
+               <a href="{{ url_for('edit_task', homework_id=homework._id) }}" class="task-button edit-button">Edit</a>             
+               <a href="#{{ homework._id }}" class="modal-trigger task-button delete-button">Delete</a>
             </div>
             <!-- Modal Structure -->
             <div id="{{ homework._id }}" class="modal">

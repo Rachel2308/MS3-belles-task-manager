@@ -135,29 +135,20 @@ header a:hover {
 	color: #616161;
 }
 
-.delete-button {
-	background-color: #d50000;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-bottom: 5px;
-	padding-top: 3px;
-	border-radius: 10px;
+
+
+.task-button:hover {
+	color: white !important;
 }
 
 .edit-button {
-	background-color: #FFFFFF;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-bottom: 5px;
-	padding-top: 3px;
-	border-radius: 10px;
+	color: #616161 !important;
+
 }
 
-.task-button:hover {
-	color: black !important;
+.delete-button {
+	color: rgb(213,0,0) !important;
 }
-
-
 
 .modal {
 	border-radius: 10px;
@@ -173,6 +164,15 @@ modal-close {
 	margin-top: 100px;
 }
 
+/* Error page */
+
+.error-link {
+	color:#e62e6c;
+}
+
+.error-link:hover {
+	color: #616161;
+}
 
 /* Add task form */
 
