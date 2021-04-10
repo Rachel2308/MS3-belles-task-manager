@@ -1,4 +1,4 @@
-# Testing
+# **Testing**
 
 ## **Bugs**
 
@@ -38,7 +38,7 @@
 
     Corrected the code in app.py from users to username
 
-    **Issue**
+*   **Issue**
 
     When updating the tasks, the task changed to "Whole Chorus"
 
@@ -46,7 +46,7 @@
 
     Amended code from {% if homework.section_name == homework.section_name %} to {% if section.section_name == homework.section_name %}
 
-    **Issue**
+*   **Issue**
 
     The Belles of Three Spires text in the header will take the user to the homework.html page even when not logged in causing errors. 
 
@@ -54,7 +54,7 @@
     
     If statement added to base.html so that link goes to Login page if not logged in otherwise it links to the View Tasks page
 
-    **Issue**
+*   **Issue**
 
     Deleting a task deleted the first task on the page, not the current
 
@@ -62,7 +62,7 @@
 
     Code amended to target the current task
 
-    **Issue**
+*   **Issue**
 
     Deleting a task takes user back to main task page. Not great UX
 
@@ -70,7 +70,7 @@
 
     Created @app.route entry for each section so that the delete button in the modal would route back to the section page. 
 
-    **Issue**
+*   **Issue**
 
     Editing a task takes user back to main task page. Not great UX
 
@@ -78,24 +78,26 @@
 
     Created @app.route entry for each section so that the edit button in the modal would route back to the section page. 
 
-## **Manual User testing**
+---
 
-### **Page**
+## **Manual User testing**
 
 * Testing has been undertaken on devices down to 320px.
 
+### **Section**
+
 * #### Header
-    * When logged in 
+    * **When logged in**
         * "The Belles of Three Spires" title links to the View Tasks page
         * The "View Tasks" and "Log Out" links all work and are visible when users are logged in
 
-    * When not logged in, 
+    * **When not logged in** 
         * "The Belles of Three Spires" title links to the Login page
         * Only the "Register" and "Login" links all work and are the only links that are visible when users are not logged in
 
 
 
-* #### Log in
+* #### **Log in**
     * Username field gives an error, shown by a red line if a username is not entered
     * Password field gives an error, shown by a red line if a password is not entered
     * If the incorrect username and/or password is entered, a flash message stating that "Username and/or password is incorrect flashes up at the top of the screen.
@@ -106,7 +108,7 @@
     * "Log In" link is not shown once the user is logged in
    
 
-* #### Registration
+* #### **Registration**
     * If nothing entered in username field, error is shown by red underline.
     * If nothing entered in first name field, error is shown by red underline.
     * If nothing entered in surname field, error is shown by red underline.
@@ -118,12 +120,12 @@
     * "Register" link is not shown when the user is logged in
 
 
-* #### Log out
+* #### **Log out**
     * "Log Out" button only shows when the user is log in
     * Clicking on log out will log member out of the site, return user to the Log In screen and display a flashed message.
 
 
-* #### Add_tasks
+* #### **Add_tasks**
     * When logged in as music team
         * Add task button is visible at the top of all section pages when logged in as a member of the music team
         * Section dropdown works and allows a section to be selected
@@ -140,7 +142,7 @@
         * Add task button is not visible when logged in a standard member 
 
  
-* #### Edit_tasks
+* #### **Edit_tasks**
     * When logged in as music team
         * Edit button only shows when logged in as a member of the music team
         * Edit button takes you to the edit task page, where all of the existing data is prefilled into the fields
@@ -154,7 +156,7 @@
 
  
 
-* #### delete_task
+* #### **delete_task**
     * When logged in as music team
         * Delete button only shows when logged in as a member of the music team
         * Hitting the Delete button displays a modal asking you to confirm if the user wishes to delete the task.
@@ -170,7 +172,7 @@
 
  
 
-* #### whole_chorus
+* #### **whole_chorus**
     * When logged in as music team
         * All tasks allocated to "Whole Chorus" can be viewed
         * Card shows the Song title and the due date
@@ -184,7 +186,7 @@
 
  
 
-* #### lead.html
+* #### **lead.html**
     * When logged in as music team
         * All tasks allocated to "Lead" can be viewed
         * Card shws the Song title and the due date
@@ -197,7 +199,7 @@
         * As above, but EDIT and DELETE buttons are now displayed
  
 
-* #### tenor.html
+* #### **tenor.html**
     * When logged in as music team
         * All tasks allocated to "Tenor" can be viewed
         * Card shws the Song title and the due date
@@ -210,7 +212,7 @@
         * As above, but EDIT and DELETE buttons are now displayed
  
 
-* #### bari.html
+* #### **bari.html**
     * When logged in as music team
         * All tasks allocated to "Bari" can be viewed
         * Card shws the Song title and the due date
@@ -222,7 +224,7 @@
         * As above, but EDIT and DELETE buttons are now displayed
  
 
-* #### bass.html
+* #### **bass.html**
     * When logged in as music team
         * All tasks allocated to "Bass" can be viewed
         * Card shws the Song title and the due date
@@ -235,10 +237,12 @@
         * As above, but EDIT and DELETE buttons are now displayed
 
 
-* #### Log Out
+* #### **Log Out**
     * Hitting the Log Out Button will log the user out of the site and display a flashed message "You are now logged out of the site"
+
+---
     
- ## Code Validator
+ ## **Code Validator**
 
 The HTML and CSS were tested using W3C Markup Validator and W3C CSS Validator to ensure that there 
 were no syntax errors on any of the pages of the project. The python was checked against Git pod's internal PEP8 checker, and double checked using PEP8 Online.
@@ -249,7 +253,7 @@ were no syntax errors on any of the pages of the project. The python was checked
 
 Each page of HTML and the CSS file were all checked. All results came back as completely clear of errors.
 
-* Results
+* **Results**
     * HTML
         * [add_tasks](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/html-check-add_task.pdf)
 
@@ -281,7 +285,9 @@ Each page of HTML and the CSS file were all checked. All results came back as co
 
     * [Python](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/pep8-check.pdf)
 
-### Testing User Stories from User Experience (UX) Section
+---
+
+### **Testing User Stories from User Experience (UX) Section**
 
 * **User Stories** 
     * **As a member of the music team**
@@ -323,7 +329,7 @@ Each page of HTML and the CSS file were all checked. All results came back as co
             * I can set tasks for the music team to help them know what we need to be working on next.
             ![](documentation/images/screenshot-3-3.png)
 
-### Further Testing
+### **Further Testing**
 
 * The Website was tested on:
     * Google Chrome 

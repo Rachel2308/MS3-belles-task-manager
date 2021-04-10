@@ -9,6 +9,8 @@ This website was designed to create a homework tracker for the Belles of Three S
 
 ![Am I responsive](documentation/images/MS3-am-I-responsive.png)
 
+---
+
 ## User Experience (UX)
 
 * **User Stories** 
@@ -26,10 +28,52 @@ This website was designed to create a homework tracker for the Belles of Three S
         1. I want to be able to set tasks for the individual sections to be able to tell them which specific parts of the tracks they need to work on
         2. I want to be able to communicate tasks and messages to the whole chorus 
         3. I want to be able to set taks for the music team to tell them what we need to be working on next.
+        
+---
+
+## Database Model
+
+MongoDB's non-relational database structure was ideal for this site as there were very few relationships between the collections on the site. 
+
+#### **Homework collection**
+|**Key**|**Type**|**Notes**|
+|:-----|:-----|:-----|
+|_id|ObjectId||
+|section_name|string|The section that the homework task is being allocated to.|
+|song_name|string|The song that the homework relates to|
+|task_title|string|A brief title of the homework|
+|due_date|date|The date that the homework should be completed by|
+|task_description|string|A more in-depth write up of the allocated homework task|
+|created_by|string|The name of the person who has set the task|
+
+#### **Sections collection**
+|**Key**|**Type**|**Notes**|
+|:-----|:-----|:-----|
+|_id|ObjectId||
+|section_name|string|The section that the homework task is being allocated to.|
+
+#### **Song collection**
+|**Key**|**Type**|**Notes**|
+|:-----|:-----|:-----|
+|_id|ObjectId||
+|song_name|string|The song that the homewrok task relates to|
+
+#### **User collection**
+|**Key**|**Type**|**Notes**|
+|:-----|:-----|:-----|
+|_id|ObjectId||
+|username|string|The username that the member registers with|
+|password|string|The password that the user chooses when they register|
+|is_musicteam|boolean|When members register they can select if they are a member of the music team or not. This then alters their user rights on some of the pages|
+
+---
+
 
 ## Testing
 
 [View the full TESTING.md documentation](TESTING.md)
+
+---
 
 ## Design
 
@@ -51,7 +95,7 @@ Three Spires" in the header. This font is similar to the font that is used by th
 material. All other text uses the lato font, with the backup font of sans serif. This is a clean and easy to read font 
 which fits in with the simple style of the site and also contrasts nicely with the script of the headers.
 
-
+---
 ### Wireframes
 
 The wireframes for the site were created in balsamiq and uploaded as a pdf. They can be found as a pdf file [here.](https://github.com/Rachel2308/MS3-belles-task-manager/blob/master/Homework-Tracker-Wireframe%20pdf.pdf)
@@ -99,10 +143,10 @@ The site is responsive across all screen sizes. The layout of the pages change d
 ![](documentation/images/existing-feature-6.png)
 
 
+---
 
 
-
-### Features Left To Implement
+### **Features Left To Implement**
 
 1. A feedback feature, where users can mark when they have completed the task would be a useful future addition on the site.
 
@@ -110,9 +154,9 @@ The site is responsive across all screen sizes. The layout of the pages change d
 
 2. Personalised tasks that can be sent to individual members rather than the whole section or chorus would help with members progress
 
+---
 
-
-### Features Changed from Original Wireframe
+### **Features Changed from Original Wireframe**
 
 ### 1. Calendar
 Originally I wanted to have a google calendar linked to the front page of the site where the members of the Belles can see any events that are coming up. Once this was embedded it did not look right for the site
@@ -231,7 +275,7 @@ Thanks to
 
 * My mentor Aaron Sinnot for his guidance
 * All the tutors, but especially Scott for his unending support, while somehow still maintaining the patience of a saint!
-* The Slack community, in particular Ed B_Lead. His support, both emotional and with the coding has been a huge help in enabling me to get through this project relatively unscathed.
+* The Slack community, in particular Ed B_Lead. His support, both emotional and when I've been struggling with the code has been a huge help in enabling me to get through this project relatively unscathed.
 
 
 ---
